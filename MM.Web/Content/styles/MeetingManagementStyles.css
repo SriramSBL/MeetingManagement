@@ -1,0 +1,1864 @@
+﻿.DefectMainView{
+ width: 100%;
+ clear: both;
+}
+
+#PT_slide_Layout{
+    z-index:1;
+}
+
+.descriptiontitlecont dd{
+      font-size:18px;
+      color:#4387fd;
+      padding-left:25px;
+      height: 50px;
+}
+.descriptionlocationcont dd{
+    padding-top:2px;
+    
+      color:black;
+      font-size:14px;
+}
+.descriptionnotescont dd{
+     padding-top:2px;
+    font-size:14px;
+    color:gray;
+  
+}
+.descriptiondatecont dd{
+      padding-top:2px;
+    color:grey;
+     
+    font-size:10px;
+}
+ 
+@media screen and (max-width: 1024px) and (min-width: 320px) {
+    .defectRightContent{
+      float: left;
+      min-height: 130px;
+       width: calc(100% - 152px);
+    }
+     
+   .rightslide{
+display:none;
+   }
+     
+           .defectImg{
+      float: left;
+      width: 150px;
+      min-height: 110px;
+      max-width: 150px;
+      background-color:lightgray;
+     
+     }
+      .defectBottom{
+      float: left;
+      min-height: 80px;
+      width:100%;
+      padding-top:0px;
+     
+     }
+    .DefectMaindescription{
+      width: calc(100% - 100px);
+    float:left;
+    
+    
+}
+    .defectdescription{
+         float:left;
+    width:100%;
+    padding-left:25px;  
+    }
+.MaindefectNotes{
+    
+    display:none;
+}
+.MainDefectStatus{
+
+  float:right;
+    width:80px;
+     min-height:80px;
+     
+}
+
+  .leftdefectdiv{
+      width:100%;
+       
+    }
+#Allevent {
+    padding-left:35px !important;
+}
+
+    #DefectNote {
+    font-size:14px !important;
+    
+    }
+      
+}
+
+
+@media screen  and (min-width: 1025px) {
+    .defectRightContent {
+        float: left;
+        min-height: 130px;
+        width: calc(100% - 352px);
+    }
+   .rightslide{
+float:right;
+width:200px;
+   }
+    .defectImg {
+        float: left;
+        width: 150px;
+        min-height: 110px;
+        max-width: 150px;
+        
+
+    }
+
+    .defectBottom {
+        float: left;
+        min-height: 80px;
+        width: 100%;
+        padding-top:0px;
+        padding-left: 25px;
+
+    }
+
+    .DefectMaindescription {
+        width: calc(100% - 80px);
+        float: left;
+      
+    }
+
+    .defectdescription {
+        float: left;
+        width: 50%;
+     
+    }
+
+    
+}
+@media screen and (max-width: 1024px) and (min-width: 320px) {
+     .rightslide{
+display:none;
+   }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    .navbar-nav > li.dd {
+        right: 200px;
+        position: absolute;
+    }
+}
+
+
+#adjustdiv{
+min-height:30px;
+
+}
+
+
+#notescontent {
+  display: block;
+  display: -webkit-box;
+  height: 80px;
+  font-size: 14px;
+  line-height: 1.2;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#gridview {
+        width: 89px;
+        margin-top: -5px;
+            height: 30px;
+            border-radius: 2px;
+}
+#Openevent {
+    padding-left:35px !important;
+}
+#Allevent {
+    padding-left:15px ;
+}
+
+.Defectsubjectlabel {
+    width:100%;
+    padding: 6px 12px;
+    color: #555;
+    font-size: larger;
+    max-height: 35px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1;
+    overflow-y: hidden;
+}
+
+.defectnotelabel{
+    height:54px;
+    width:100%;
+    display:-webkit-box;
+    padding: 6px 12px;
+    color: #555;
+    
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height:1.2;
+}
+.comboboxlabel {
+    width:100%;
+    font-size: larger;
+    display:block;
+    padding: 6px 12px;
+    color: #555;
+    
+
+
+}
+.k-grid-content{
+overflow-x:hidden !important;
+overflow-y:auto !important;
+}
+
+#PT_Left_UL li {
+    padding: 5px;
+    padding-left: 0px;
+}
+#PT_Left_UL li {
+    font-size:14px;
+    color:black !important;
+    border-left:4px solid transparent;
+}
+.box-col button {
+    margin:5px;
+}
+
+#PT_Left_UL li:hover {
+    
+    border-left:4px solid #c53929;
+}
+#PT_Left_UL li.active {
+    
+    border-left:4px solid gray !important;
+}
+
+
+ .treeInlineEdit  input
+    {
+        font-size: 1.5em;
+        min-width: 10em;
+        min-height: 2em;
+        border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        border: 0px solid #ffffff;
+    }
+ 
+.k-in:hover {
+    background-color:lightgrey !important;
+}
+#RiskCategoryTreeView .k-state-selected{
+    background-color:#fff !important;
+}
+.k-grid-content .k-state-selected{
+    background-color:#e6e6e6 !important;
+    border-bottom-color:#ffffff !important;
+}
+
+
+
+.k-dropzone{
+                 display:none;
+             }
+             .k-progress{
+                 display:none;
+             }
+             .k-upload-files{
+                    display:none;
+             }
+#left-content {
+
+    padding-left:5px;
+    }
+.k-window-content {
+   
+    overflow:hidden !important;    
+}
+             #Risks td {
+   
+    padding-top: 0px !important;
+   
+    padding-bottom: 0px !important;
+    /*padding-left: 1.286em !important;*/
+}
+
+                   
+                    
+                    .k-state-selected {
+                        background-color:none !important;
+
+                    }
+                    
+           
+                .customer-name {
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: 32px;
+                    padding-left: 3px;
+                }
+       
+                        .glyphicon-cog {
+                                font-size: 18px;
+                            }
+
+                            .settings {
+                                cursor: pointer;
+                            }
+
+                            #menuNavbar .nav > li {
+                                position: relative;
+                                display: block;
+                                float: left;
+                            }
+            
+
+                 
+                       
+     
+                   
+                            #undo:hover{
+                        color: silver;
+                    }
+
+              
+
+                        #undo {
+                        text-align: center;
+        
+                        margin-top: 4px;
+                        padding-right:30px;
+                        font-size:medium;
+      
+                    }
+                       
+        
+                    .fieldlist {
+                                margin: 0 0 -2em;
+                                padding: 0;
+                            }
+
+                            .fieldlist li {
+                                list-style: none;
+                                padding-bottom: 3px;
+                            }
+
+                            .fieldlist label {
+                                display: block;
+                              
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                font-size: 12px;
+                                color: #444;
+                            }
+
+             
+                                #undo {
+                                    text-align: center;
+                                    position: absolute;                   
+                                    padding: 1em;
+                                    cursor: pointer;
+                                    float:right;
+                                }
+                                .armchair {
+                	                float: left;
+                	                margin: 30px 30px 120px 30px;
+                	                text-align: center;
+                                }
+                                .armchair img {
+                                    display: block;
+                                    margin-bottom: 10px;
+                                }
+                                .k-widgetk-window {
+                                display:none;
+                                
+                                }
+                                    .k-window{
+                                        overflow:hidden;
+                                    
+                                    }
+                                    .k-header {
+                                        background-color: #f3f3f4 !important;
+                                        color: black !important;
+                                        }
+
+                                  .k-grid-header .k-header, .k-grid-header .k-header .k-link, .k-grid-header .k-link, .k-grid-header .k-link:link, .k-pager-info, .k-scheduler-agendaview .k-scheduler-datecolumn, .k-scheduler-header{
+                                        color:grey !important;
+                                    }
+                                    #right-content {
+                                        padding-left:0px !important;
+                                    }
+
+                            #icon-right,
+                            #completesubmit:hover {
+                                background-color: #fff;
+                                color: #2e2e2e;
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+                            .Completebutton:hover {
+                                background-color: #fff;
+                                color: #2e2e2e;
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+
+                            .autolist:hover {
+                                background-color: #fff;
+                                color: #2e2e2e;
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+
+                            #Viewcomplete {
+                                border-radius: 4px;
+                            }
+                           #Viewcomplete:focus {
+                                                    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                    box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                }
+
+
+                           #updatewindow:focus {
+                                                    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                    box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                }
+                           
+                             .Newdefects:hover {
+                                
+                                
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+
+    
+                           
+.autolist {
+
+    border:1px solid;
+    border-color:black;
+    border-bottom-color:black;
+}
+
+.menushow {
+    margin-left:3px;
+    opacity: 0.5;
+    height: 24px;
+    margin-top:13px !important;
+}
+
+
+.Newdefects {
+    
+    
+    cursor:pointer;
+    
+    
+    height:30px;
+    font-size:14px;
+    text-align:center;
+    color:grey;
+    border-radius:2px;
+    border-color:transparent;
+    background-color:#f3f3f4 !important;
+    }
+
+ .demo-section {
+        position: relative;
+    }
+    .demo-section > p {
+        text-align: right;
+        margin-top: 10px;
+        font-size: .8em;
+    }
+    #prev-img,
+    #next-img {
+        display: block;
+        position: absolute;
+        text-align:center;
+        z-index: 1;
+        height: 50px;
+        width: 40px;
+        opacity: 0.15;
+        top:80px;
+        
+    }
+    
+    .title {
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        padding: 1em;
+        background-color: #222;
+        color: #fff;
+    }
+.k-state-selected {
+    color:black !important;
+}
+
+
+#completesubmit {
+    background-color: white !important;
+    border-radius:4px;
+
+}
+
+
+.k-window-titlebar {
+
+    height:30px !important;
+
+}
+
+#wind_wnd_title {
+
+
+    margin-top:10px !important;
+}
+.modal-content {
+
+    padding:5px;
+}
+.modal-dialog {
+    
+    z-index:10003;
+    margin-bottom:0px;
+}
+
+.k-content {
+    height:45%
+}
+#myModal {
+    z-index:10003;
+}
+
+
+#listdescription {
+    padding:5px;
+    color:grey;
+    font-size:small;
+    font-weight:normal;
+    font-style:italic;
+    padding-left:20px;
+}
+#UpdateButtonText
+{
+    bottom:5px !important;
+    color:lightgray;
+}
+
+.k-grid td.k-state-selected {
+    background-color: #00b0ff !important;
+}
+.k-selectable tbody tr {
+    height: 45px;
+    max-height:66px !important;
+}
+
+.k-grid-content tr:last-child>td {
+    border-bottom-width: 1px !important;
+}
+
+#camprofile {
+    border-radius: 5px;
+    width: 40px;
+    height: 30px;
+    
+}
+
+.k-header:first-child a {
+    text-align:left;
+}
+
+
+dl {
+    margin-bottom:0px !important;
+}
+
+#gridview:hover {
+           cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+}
+
+#listview{
+      margin-top: 8px;
+    margin-right: 10px;
+    height:35px;
+        
+}
+#listview:hover{
+          cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+}
+
+   
+    .product-view dl
+    {
+        
+        overflow: hidden;
+    }
+    
+  
+    
+    .product-view dd
+    {
+     
+        overflow: hidden;
+        
+        text-overflow: ellipsis;
+
+    }
+    
+   
+    .k-listview
+    {
+        
+        overflow: hidden;
+       
+    }
+#tilesubject {
+    width:45%;
+    height:100px;
+    float:left;
+    
+}
+#tilelocation {
+    width:15%;
+    height:50px;
+    float:left;
+}
+
+#tileStaus {
+    width:15%;
+    height:50px;
+    float:right;
+    text-align:center;
+}
+.tileviewsubject{
+    width:100%;
+    height:100px;
+}
+
+.Cancel:hover {
+    cursor: pointer;
+    color:black;
+}
+.product-view:hover {
+    border-left:4px solid #c53929 !important;
+    background-color:#e7e7e7;
+    
+
+}
+.k-listview > .k-state-selected {
+     border-left:4px solid gray !important;
+     background-color:#ffffff !important;
+     box-shadow: 0 0 10px 100px #ebf2f9 inset;
+     transition: all .8s ease-in-out;
+    
+}
+
+
+
+/*New Custome Styles*/
+#BindMyView{
+    height:100%;
+}
+.Newdefectli{
+    position:absolute!important;
+    right:70px;
+    cursor:pointer;
+    display:block;
+    margin-top:10px;
+    height:30px;
+    font-size:14px;
+    text-align:center;
+    color:grey;
+    border-radius:2px;
+    border-color:transparent;
+    background-color:#f3f3f4 !important;
+}
+
+#PT_TopHeader .Newdefectli{
+    display:none;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 768px) {
+ .gridviewicons{
+    position: absolute!important;
+    right: 180px!important;
+    width: 89px;
+    top:15px;
+}
+.configimg{
+    position: absolute!important;
+    right: 10px!important;
+    top: -3px;
+}
+
+}
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .gridviewicons{
+   
+  float: right;
+    margin-right: 85px;
+    width: 89px;
+    height: 50px;
+    margin-top: -70px;
+}
+.configimg{
+   /*display:none!important;*/
+      float: right;
+    margin-top: -83px;
+    margin-right: 23px;
+}
+}
+.lSPager{
+    display:none;
+}
+.Proceed, .exit{
+width:190px !important;
+position: absolute;
+width:auto;
+height:auto;
+background-color:transparent;
+color:dimgrey;
+font-weight:bold;
+display:none;
+left: 50%;
+margin: 0px -80px;
+
+
+}
+.Proceed {
+    top:50px;
+    
+}
+.exit {
+   
+    top:120px;
+}
+.Proceed:hover {
+    color:red;  
+}
+
+.defectImg {
+    background-image: url('../Images/noPic.jpeg');
+    background-repeat:round;
+    margin-top: 10px;
+}
+#Defects {
+overflow-y:auto !important;
+}.DefectMainView{
+
+ width: 100%;
+ clear: both;
+}
+
+.descriptiontitlecont dd{
+      font-size:18px;
+      color:#4387fd;
+      padding-left:25px;
+      height: 50px;
+}
+.descriptionlocationcont dd{
+    padding-top:2px;
+    
+      color:black;
+      font-size:14px;
+}
+.descriptionnotescont dd{
+     padding-top:2px;
+    font-size:14px;
+    color:gray;
+  
+}
+.descriptiondatecont dd{
+      padding-top:2px;
+    color:grey;
+     
+    font-size:10px;
+}
+ 
+@media screen and (max-width: 1024px) and (min-width: 320px) {
+    .defectRightContent{
+      float: left;
+      min-height: 130px;
+       width: calc(100% - 152px);
+    }
+     
+   .rightslide{
+display:none;
+   }
+     
+           .defectImg{
+      float: left;
+      width: 150px;
+      min-height: 110px;
+      max-width: 150px;
+      background-color:lightgray;
+     
+     }
+      .defectBottom{
+      float: left;
+      min-height: 80px;
+      width:100%;
+      padding-top:0px;
+     
+     }
+    .DefectMaindescription{
+      width: calc(100% - 100px);
+    float:left;
+    
+    
+}
+    .defectdescription{
+         float:left;
+    width:100%;
+    padding-left:25px;  
+    }
+.MaindefectNotes{
+    
+    display:none;
+}
+.MainDefectStatus{
+
+  float:right;
+    width:80px;
+     min-height:80px;
+     
+}
+
+  .leftdefectdiv{
+      width:100%;
+       
+    }
+#Allevent {
+    padding-left:35px !important;
+} 
+      
+}
+
+
+@media screen and (max-width: 1366px) and (min-width: 1025px) {
+    .defectRightContent {
+        float: left;
+        min-height: 130px;
+        width: calc(100% - 352px);
+    }
+   .rightslide{
+float:right;
+width:200px;
+   }
+    .defectImg {
+        float: left;
+        width: 150px;
+        min-height: 110px;
+        max-width: 150px;
+        
+
+    }
+
+    .defectBottom {
+        float: left;
+        min-height: 80px;
+        width: 100%;
+        padding-top:0px;
+        padding-left: 25px;
+
+    }
+
+    .DefectMaindescription {
+        width: calc(100% - 80px);
+        float: left;
+      
+    }
+
+    .defectdescription {
+        float: left;
+        width: 50%;
+     
+    }
+
+    .Main
+     {
+        float: right;
+        width: 50%;
+        
+    }
+
+    .Main
+    
+    
+    tatus {
+        float: right;
+        width: 50px;
+        min-height:100px;
+        margin-top:1px;
+
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 320px) {
+     .rightslide{
+display:none;
+   }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    .navbar-nav > li.dd {
+        right: 200px;
+        position: absolute;
+    }
+}
+
+
+#adjustdiv{
+min-height:30px;
+
+}
+
+
+
+#notescontent {
+  display: block;
+  display: -webkit-box;
+  height: 80px;
+  font-size: 14px;
+  line-height: 1.2;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#gridview {
+        width: 89px;
+        margin-top: -5px;
+            height: 30px;
+            border-radius: 2px;
+}
+#Openevent {
+    padding-left:35px !important;
+}
+#Allevent {
+    padding-left:15px ;
+}
+
+.Defectsubjectlabel {
+  
+    width:100%;
+    padding: 6px 12px;
+    color: #555;
+    font-size: larger;
+    max-height: 35px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1;
+    overflow-y: hidden;
+}
+
+.defectnotelabel{
+    height:54px;
+    width:100%;
+    display:-webkit-box;
+    padding: 6px 12px;
+    color: #555;
+    
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height:1.2;
+}
+.comboboxlabel {
+    width:100%;
+    font-size: larger;
+    display:block;
+    padding: 6px 12px;
+    color: #555;
+    
+
+
+}
+#Risks .k-grid-content{
+overflow-x:hidden !important;
+    overflow-y: scroll!important
+}
+
+#PT_Left_UL li {
+    padding: 5px;
+    padding-left: 0px;
+}
+#PT_Left_UL li {
+    font-size:14px;
+    color:black !important;
+    border-left:4px solid transparent;
+}
+.box-col button {
+    margin:5px;
+}
+
+#PT_Left_UL li:hover {
+    
+    border-left:4px solid #c53929;
+}
+#PT_Left_UL li.active {
+    
+    border-left:4px solid gray !important;
+}
+
+
+ .treeInlineEdit  input
+    {
+        font-size: 1.5em;
+        min-width: 10em;
+        min-height: 2em;
+        border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        border: 0px solid #ffffff;
+    }
+
+.k-in:hover {
+    background-color:lightgrey !important;
+}
+#DefectLocationTreeView .k-state-selected{
+    background-color:#fff !important;
+}
+.k-grid-content .k-state-selected{
+    background-color:#e6e6e6 !important;
+    border-bottom-color:#ffffff !important;
+}
+
+
+
+.k-dropzone{
+                 display:none;
+             }
+             .k-progress{
+                 display:none;
+             }
+             .k-upload-files{
+                    display:none;
+             }
+#left-content {
+
+    padding-left:5px;
+    }
+.k-window-content {
+   
+    overflow:hidden !important;    
+}
+             .k-grid td {
+   
+    padding-top: 0px !important;
+   
+    padding-bottom: 0px !important;
+    padding-left: 1.286em !important;
+}
+
+              
+                  
+
+                    
+                    .k-state-selected {
+                        background-color:none !important;
+
+                    }
+                  
+              
+
+                .customer-name {
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: 32px;
+                    padding-left: 3px;
+                }
+       
+                        .glyphicon-cog {
+                                font-size: 18px;
+                            }
+
+                            .settings {
+                                cursor: pointer;
+                            }
+
+                            #menuNavbar .nav > li {
+                                position: relative;
+                                display: block;
+                                float: left;
+                            }
+            
+                            #undo:hover{
+                        color: silver;
+                    }
+
+              
+
+                        #undo {
+                        text-align: center;
+        
+                        margin-top: 4px;
+                        padding-right:30px;
+                        font-size:medium;
+      
+                    }
+                       
+        
+                    .fieldlist {
+                                margin: 0 0 -2em;
+                                padding: 0;
+                            }
+
+                            .fieldlist li {
+                                list-style: none;
+                                padding-bottom: 3px;
+                            }
+
+                            .fieldlist label {
+                                display: block;
+                              
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                font-size: 12px;
+                                color: #444;
+                            }
+
+             
+                                #undo {
+                                    text-align: center;
+                                    position: absolute;                   
+                                    padding: 1em;
+                                    cursor: pointer;
+                                    float:right;
+                                }
+                                
+                                .k-widgetk-window {
+                                display:none;
+                                /*max-width:300px;*/
+                                }
+                                   
+                                    .k-window{
+                                        overflow:hidden;
+                                   
+                                    }
+                                    .k-header {
+                                        background-color: #f3f3f4 !important;
+                                        color: black !important;
+                                        }
+
+                                  .k-grid-header .k-header, .k-grid-header .k-header .k-link, .k-grid-header .k-link, .k-grid-header .k-link:link, .k-pager-info, .k-scheduler-agendaview .k-scheduler-datecolumn, .k-scheduler-header{
+                                        color:grey !important;
+                                    }
+                                    #right-content {
+                                        padding-left:0px !important;
+                                    }
+
+                            #icon-right,
+                            #completesubmit:hover {
+                                background-color: #fff;
+                                color: #2e2e2e;
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+                            .Completebutton:hover {
+                                background-color: #fff;
+                                color: #2e2e2e;
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+
+                            .autolist:hover {
+                                background-color: #fff;
+                                color: #2e2e2e;
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+
+                            #Viewcomplete {
+                                border-radius: 4px;
+                            }
+                           #Viewcomplete:focus {
+                                                    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                    box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                }
+
+
+                           #updatewindow:focus {
+                                                    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                    box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+                                                }
+                           
+                             .Newdefects:hover {
+                                
+                                
+                                    box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+    
+                            }
+
+    
+                           
+.autolist {
+
+    border:1px solid;
+    border-color:black;
+    border-bottom-color:black;
+}
+
+.menushow {
+    margin-left:3px;
+    opacity: 0.5;
+    height: 24px;
+    margin-top:13px !important;
+}
+
+
+.Newdefects {
+    
+    
+    cursor:pointer;
+    
+    
+    height:30px;
+    font-size:14px;
+    text-align:center;
+    color:grey;
+    border-radius:2px;
+    border-color:transparent;
+    background-color:#f3f3f4 !important;
+    }
+
+
+#editButton {
+
+    position:absolute;
+    right:60px;
+    cursor:pointer;
+    display:block;
+    margin-top:12px;
+    height:28px;
+    font-size:14px;
+    text-align:center;
+    color:grey;
+    border-radius:5px;
+    border-color:grey;
+    background-color:transparent;
+}
+
+.navbar-toggle {
+
+    margin-top:10px !important;
+}
+
+ .demo-section {
+        position: relative;
+    }
+    .demo-section > p {
+        text-align: right;
+        margin-top: 10px;
+        font-size: .8em;
+    }
+    #prev-img,
+    #next-img {
+        display: block;
+        position: absolute;
+        text-align:center;
+        z-index: 1;
+        height: 50px;
+        width: 40px;
+        opacity: 0.15;
+        top:80px;
+        
+    }
+   
+    .title {
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        padding: 1em;
+        background-color: #222;
+        color: #fff;
+    }
+.k-state-selected {
+    color:black !important;
+}
+
+
+#completesubmit {
+    background-color: white !important;
+    border-radius:4px;
+
+}
+
+
+.k-window-titlebar {
+
+    height:30px !important;
+
+}
+
+#wind_wnd_title {
+
+
+    margin-top:10px !important;
+}
+.modal-content {
+
+    padding:5px;
+}
+.modal-dialog {
+  
+    z-index:10003;
+    margin-bottom:0px;
+}
+
+.k-content {
+    height:45%
+}
+#myModal {
+    z-index:10003;
+}
+
+#listdescription {
+    padding:5px;
+    color:grey;
+    font-size:small;
+    font-weight:normal;
+    font-style:italic;
+    padding-left:20px;
+}
+#UpdateButtonText
+{
+    bottom:5px !important;
+    color:lightgray;
+}
+
+.k-grid td.k-state-selected {
+    background-color: #00b0ff !important;
+}
+.k-selectable tbody tr {
+    height: 45px;
+    max-height:66px !important;
+}
+
+.k-grid-content tr:last-child>td {
+    border-bottom-width: 1px !important;
+}
+
+#camprofile {
+    border-radius: 5px;
+    width: 40px;
+    height: 30px;
+    
+}
+
+.k-header:first-child a {
+    text-align:left;
+}
+
+
+dl {
+    margin-bottom:0px !important;
+}
+
+#gridview:hover {
+           cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+}
+
+#listview{
+      margin-top: 8px;
+    margin-right: 10px;
+    height:35px;
+        
+}
+#listview:hover{
+          cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,.2),0 2px 3px rgba(0,0,0,.05);
+}
+
+   
+    .product-view dl
+    {
+        
+        overflow: hidden;
+    }
+    
+  
+    
+    .product-view dd
+    {
+     
+        overflow: hidden;
+        
+        text-overflow: ellipsis;
+
+    }
+    
+   
+    .k-listview
+    {
+        
+        overflow: hidden;
+       
+    }
+#tilesubject {
+    width:45%;
+    height:100px;
+    float:left;
+    
+}
+#tilelocation {
+    width:15%;
+    height:50px;
+    float:left;
+}
+
+#tileStaus {
+    width:15%;
+    height:50px;
+    float:right;
+    text-align:center;
+}
+.tileviewsubject{
+    width:100%;
+    height:100px;
+}
+
+
+.Cancel:hover {
+    cursor: pointer;
+    color:black;
+}
+.product-view:hover {
+    border-left:4px solid #c53929 !important;
+    background-color:#e7e7e7;
+    
+
+}
+.k-listview > .k-state-selected {
+     border-left:4px solid gray !important;
+     background-color:#ffffff !important;
+     box-shadow: 0 0 10px 100px #ebf2f9 inset;
+     transition: all .8s ease-in-out;
+    
+}
+
+
+
+/*New Custome Styles*/
+#BindMyView{
+    height:100%;
+     
+}
+.Newdefectli{
+    position:absolute!important;
+    right:70px;
+    cursor:pointer;
+    display:block;
+    margin-top:10px;
+    height:30px;
+    font-size:14px;
+    text-align:center;
+    color:grey;
+    border-radius:2px;
+    border-color:transparent;
+    background-color:#f3f3f4 !important;
+}
+
+#PT_TopHeader .Newdefectli{
+    display:none;
+}
+
+@media screen  and (min-width: 768px) {
+ .gridviewicons{
+    position: absolute!important;
+    right: 180px!important;
+    width: 89px;
+    top:15px;
+}
+.configimg{
+    position: absolute!important;
+    right: 10px!important;
+    top: -3px;
+}
+#Risks td:first-child {
+
+    display:-webkit-box;
+     
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height:66px!important;
+    -webkit-box-pack: center;
+       
+}
+.confcontainer {
+    width:40% !important;
+    min-width:40% !important;
+}
+    
+}
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .gridviewicons{
+   /*position: absolute!important;
+    right: 75px!important;
+    width: 89px;
+    top: 55px;*/
+  float: right;
+    margin-right: 85px;
+    width: 89px;
+    height: 50px;
+    margin-top: -70px;
+}
+.configimg{
+   /*display:none!important;*/
+      float: right;
+    margin-top: -83px;
+    margin-right: 23px;
+}
+#Risks td:first-child {
+
+    display:-webkit-box;
+     
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height:66px;
+    -webkit-box-pack: center;
+       
+}
+   
+.confcontainer {
+    width:100% !important;
+    min-width:40% !important;
+}
+#configgrid {
+    display:none;
+    overflow-y:auto;
+}
+
+}
+.lSPager{
+    display:none;
+}
+.Proceed, .exit{
+width:190px !important;
+position: absolute;
+width:auto;
+height:auto;
+background-color:transparent;
+color:dimgrey;
+font-weight:bold;
+display:none;
+left: 50%;
+margin: 0px -80px !important;
+
+
+}
+.Proceed {
+    top:50px;
+    
+}
+.exit {
+   
+    top:120px;
+}
+.Proceed:hover {
+    color:red;  
+}
+
+.defectImg {
+    background-image: url('../Images/noPic.jpeg');
+    background-repeat:round;
+    margin-top: 10px;
+}
+#Defects {
+overflow-y:auto !important;
+}
+
+
+
+
+.notesmaximize {
+    position:relative;
+    max-width:100% !important;
+   height:220px !important;
+   background:white;
+   font-size:14px;
+}
+.containernotemaxi {
+    width:94% !important;
+    max-width:94% !important;
+     top:70px;
+     position:absolute;
+}
+
+
+
+.DefectNotedefault {
+    height:54px !important;
+    max-height:54px !important;
+    font-size:11px;
+    min-width:57% !important;
+    max-width:100% !important;
+}
+
+.slide-placeholder {
+	background: #DADADA;
+	position: relative;
+}
+
+.draggable {
+        cursor: move;
+        position: absolute;
+        margin-left: -28px;
+        width: 56px;
+        height: 56px;
+        background-color: #03a9f4;
+    }
+
+    #droptarget {
+        cursor: default;
+        vertical-align: middle;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        display:inline-block;
+        margin-left: 25px;
+    }
+
+    .test1 {
+        vertical-align: middle;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: 1.5em;
+        font-size: 14px;
+    }
+
+
+    .k-button {
+        margin: 5px;
+        margin-left:15px;
+        text-transform:none !important;
+    }
+
+    .deletewindow  {
+        box-shadow: 0 1px 2px 1px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.08);
+        padding:15px;
+        background-color: aliceblue;
+    }
+    .addcontainer {
+        box-shadow: 0 1px 2px 1px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.08);
+        height: 55px;
+        min-width:250px;
+
+    }
+    .message {
+        color:red;
+    }
+    .suredelte {
+         margin-left:50px;
+    }
+    #configtree {
+         box-shadow: 0 1px 2px 1px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.08);
+         min-width:250px;
+    }
+    .camerassection {
+        position: fixed;
+        z-index: 10000;
+        width: 400px;
+        min-height: 400px;
+        overflow: hidden;
+        border: 2px solid #ddd;
+        top: 0px;
+        background-color: white;
+        right: 0px;
+        visibility: hidden;
+    }
+
+    .maindefectsection {
+        padding-top: 0px;
+    }
+
+    .leftsection {
+        float: left;
+    }
+
+    .submitsdefect {
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    .clearall {
+        height: 10px;
+        clear: both;
+    }
+
+    .defectheader {
+        height: 60px;
+        line-height: 35px;
+        clear: both;
+        display: block;
+        background-color: #e7e7e7;
+    }
+
+        .defectheader .logtitle {
+            display: block;
+            font-size: 20px;
+            padding-left: 10px;
+            float: left;
+            padding-top: 10px;
+        }
+
+    /*.close {
+        display: block;
+        font-size: 16px;
+        padding-right: 10px;
+        float: right;
+        margin-top: 8px;
+        padding-top: 10px;
+    }*/
+
+    .Cancel {
+        display: block;
+        font-size: 16px;
+        padding-right: 10px;
+        float: right;
+        margin-top: 8px;
+        color: grey;
+    }
+
+    #CreateDefect {
+        border-radius: 6px !important;
+        background-color: white !important;
+        color: grey;
+        display: none;
+        height: 54px;
+        font-size: large;
+    }
+
+    #DefectStatus {
+        background-color: white !important;
+        color: darkgrey !important;
+        border-radius: 6px !important;
+        margin-top: 0px;
+        height: 54px;
+        margin-left: 10px;
+        padding-top: 0px !important;
+        font-size: x-large;
+    }
+
+    #labelstatus {
+        float: left;
+        margin-left: 7px;
+    }
+
+    label {
+        font-weight: normal !important;
+        color: grey;
+    }
+#configtree li .k-state-selected {
+    color:red;
+}
+
+.chaticon {
+    position:absolute;
+    right: 80px;
+    top: 15px;
+    opacity:0.5;
+    cursor: pointer;
+    
+}
+         
+.chaticon:hover{
+     opacity:1;
+     cursor: pointer;
+     transform: scale(1.1);
+}
+
+.exit:target {
+   transform: scale(0.5);
+   transition-duration: 1s;
+}
+.notemaximagecssdefault {
+        width: 35px;
+    height: 35px;
+    position: absolute;
+    float: right;
+    right: -9px;
+    bottom: -20px;
+    
+}
+
+.notemaximagecssdynamic {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    float: right;
+    right: 2px;
+    bottom: 2px;
+}
+
+.k-state-selected {
+    background-color:white !important;
+}
+.Risk_level{
+    display: block;
+   height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+   .PT_Top:nth-of-type(2) {
+    
+    top: 8px!important;
+   
+    right: 60px!important;
+   
+}
+      .NewMeeting{
+          display:none;
+      }
+      
+
+      @media (min-width: 992px){
+.modal-lg {
+    width: 900px;
+}
+      }
+
+
+            @media(min-width: 320px) and (max-width: 992px){
+.modal-lg {
+    width: 100%;
+}
+
+
+      }
+
+ #MeetingForm {
+   
+    position:absolute;
+    top:0px !important;
+    left:0px;
+    z-index:100000;
+} 

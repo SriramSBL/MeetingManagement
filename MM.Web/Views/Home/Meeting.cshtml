@@ -1,0 +1,687 @@
+﻿<!-- Modal -->
+
+
+<div class="modal fade" id="MeetingForm" role="dialog">
+    <div class="modal-dialog modal-lg formcontainer">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title meetingHeader">New Meeting</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 firstBlock">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blockHeadings">
+                        <span style="font-size:20px">Start the Meeting</span>
+                    </div>
+                    <div class="main">
+                        <div class="subject">
+                            <input type="text" id="input" name="fullname" class="k-textbox form-control txtSubjectfields txtfiled controlforsmall" placeholder="Subject" />
+                        </div>
+                        <div id="InvitiesGrid"></div>
+                        <div id="CcsGrid"></div>
+
+                        <div class="EventBtns3">
+                            <span class="btnTopic btn btn-circle btn-default badge addCcs" style="line-height:25px;font-size:20px;" data-toggle="modal" data-target="#inviteMemberModel">+</span>
+                        </div>
+                        <div class="EventBtns2">
+                            <span class="btnTopic btn btn-circle btn-default badge addInvities" style="line-height:25px;font-size:20px;" data-toggle="modal" data-target="#inviteMemberModel">+</span>
+                        </div>
+                        <div class="loc">
+                            <input type="text" id="input" name="fullname" class="k-textbox form-control txtSubjectfields controlforsmall " placeholder="Location" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 secondBlock">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blockHeadings">
+                        <span style="font-size:20px">Conduct the Meeting</span>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 conduct">
+                        <div id="conductMeetingGrid"></div>
+                        <script type="text/x-kendo-tmpl" id="conductMeetingGridTemplate">
+                            <div class="function">
+                                #if(Heading==null){#
+
+                                <table class="table">
+                                    <thead>
+                                        <tr style="width:100%;" class="conductMeetingGrid-header">
+                                            <th colspan="9">#= Title #</th>
+                                        </tr>
+                                    </thead>
+
+
+                                    #for(var i = 0; i < SubTitles.length; i++){#
+                                    <tbody>
+                                        <tr style="width:100%;" id="conducthover" class="conductMeetingGrid-body">
+
+                                            <td colspan="9">
+                                                <div class="minutstoedit" style="display:block;width:100%;height:150px;">
+                                                    <div style="float:left;" class="topicheading">
+                                                        @*disabledform*@
+                                                        @*<input type="text" class="disabledform" disabled value="#=SubTitles[i].Title#" />*@
+                                                   <span>#=SubTitles[i].Title#</span>
+                                                     </div>
+                                                    <div id="conicoondiv" style="width:100px; float:right;">
+                                                        #if(SubTitles[i].IsCompleted == true){#
+                                                        <img src="/apps/A000022/Content/Images/Icons/newicons/ic_check_circle_black_24dp_2x.png" style="width:30px;height:30px;margin-left:10px;cursor:pointer;  " id="iconsforconduct" />
+                                                        #}else{#
+                                                        @*<a data-toggle="modal" data-target='\#myModal' onclick="minutesbinddata('#:SubTitles[i].Id#')">*@
+                                                        <a data-toggle="modal" data-target='\#myModal'>
+                                                            <img src="/apps/A000022/Content/Images/Icons/newicons/ic_create_black_24dp_2x.png" alt="plus" style="width:30px;height:30px;cursor:pointer;" class="editminits" id="iconsforconduct" data-id="#:SubTitles[i].Id#" />
+                                                        </a>
+                                                            @*<img src="/apps/A000022/Content/Images/Icons/newicons/ic_create_black_24dp_2x.png" alt="plus" style="width:30px;height:30px;cursor:pointer;" class="editminits" id="iconsforconduct" />
+                                                        </a>*@
+                                                        <a onclick="topicCompleted('#:SubTitles[i].Id#')">
+                                                            <img src="/apps/A000022/Content/Images/Icons/newicons/ic_check_circle_black_24dp_2x.png" style="width:30px;height:30px;margin-left:10px;cursor:pointer;  " id="iconsforconduct" />
+                                                        </a>
+                                                        #}#
+                                                    </div>
+                                                    <div id="displayminutes">
+                                                        <span style="display:block;clear:both;">#if(SubTitles[i].AgendaMinute.length>0){##=SubTitles[i].AgendaMinute[0].Title##}#</span>
+                                                        @*<textarea id="displayminutes" class="minutetxtarea" style="border: none" data-mid="#if(SubTitles[i].AgendaMinute.length>0){# #=SubTitles[i].AgendaMinute[0].Id# #}#" data-tid="#:SubTitles[i].Id#" onclick="onMinuteClick('#if(SubTitles[i].AgendaMinute.length>0){# #=SubTitles[i].AgendaMinute[0].Id# #}#','#:SubTitles[i].Id#')">#if(SubTitles[i].AgendaMinute.length>0){##=SubTitles[i].AgendaMinute[0].Title##}#</textarea>*@
+                                                    </div>
+
+                                                </div>
+
+                                            </td>
+
+                                            @*<td colspan="7" style="height:150px;">
+                                                <div class="minutstoedit" >#=SubTitles[i].Title#</div>
+                                                    <div id="displayminutes">
+                                                        <textarea id="displayminutes" style="border: none">#if(SubTitles[i].AgendaMinute.length>0){# #=SubTitles[i].AgendaMinute[0].Title# #}#</textarea>
+                                                    </div>
+
+                                                </td>
+
+                                                <td colspan="2" style="height:150px;">
+                                                    <div id="conicoondiv" style="width:100px;">
+                                                        #if(SubTitles[i].IsCompleted == true){#
+                                                        <img src="/Content/Images/Icons/newicons/ic_check_circle_black_24dp_2x.png" style="width:30px;height:30px;margin-left:10px;cursor:pointer;  " id="iconsforconduct" />
+                                                        #}else{#
+                                                        <a data-toggle="modal" data-target='\#myModal' onclick="minutesbinddata('#:SubTitles[i].Id#')">
+                                                            <img src="/Content/Images/Icons/newicons/ic_create_black_24dp_2x.png" alt="plus" style="width:30px;height:30px;cursor:pointer;" class="editminits" id="iconsforconduct" />
+                                                        </a>
+                                                        <a onclick="topicCompleted('#:SubTitles[i].Id#')">
+                                                            <img src="/Content/Images/Icons/newicons/ic_check_circle_black_24dp_2x.png" style="width:30px;height:30px;margin-left:10px;cursor:pointer;  " id="iconsforconduct" />
+                                                        </a>
+                                                        #}#
+                                                    </div>
+                                                </td>*@
+                                        </tr>
+
+                                        <tr style="width:100%;" class="conductMeetingGrid-footer">
+                                            <td colspan="9">
+                                                <div id="conicoondiv1">
+                                                    @*<button class="k-button" id="textButton" style="height:30px;min-width:40px; ">Action</button>*@
+                                                    <input type="text" placeholder="Action" class="form-control action" id="minuteAction" />
+                                                    <button class="k-button" id="textButton" style="height:30px;min-width:40px;"></button>
+                                                    @*<div style="opacity:0.6;">#:StartDate#</div>*@
+
+                                                </div>
+                                            </td>
+                                            @*<td colspan="5"></td>
+
+                                                <td colspan="4">
+                                                    <div id="conicoondiv1" style="width:150px;">
+                                                        <button class="k-button" id="textButton" style="height:30px;min-width:40px; ">Action</button>
+                                                        <button class="k-button" id="textButton" style="height:30px;min-width:40px;">Date</button>
+                                                    </div>
+                                                </td>*@
+                                        </tr>
+                                    </tbody>
+
+
+                                    #}#
+                                </table>
+                                #}#
+                            </div>
+                        </script>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 thirdBlock" style="min-height:319px;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blockHeadings">
+                        <span style="font-size:20px" class="hedings">End the Meeting</span>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 10px;">
+                        <div class="meetingForm">
+
+                            <div class="mainMeetingForm">
+
+                                <div class="MeetingSchedules">
+                                    <div class="lastMeetingClose">
+                                        <span class="CloseMessage">
+                                            That was the last meeting, close without scheduling another meeting.
+                                        </span>
+                                        <span class="CloseBtn">Close</span>
+                                    </div>
+                                    <div class="separtor">
+                                        <span>OR</span><span></span>
+                                    </div>
+                                    <div class="NextMeeting">
+                                        <span class="CloseMessage">
+                                            Schedule the next meeting and send out the Agenda with the Invitations.
+
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                                @*<span class="meetingTitle">New Meeting</span>*@
+                                <div class="fieldsform">
+
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                        <input type="text" placeholder="Subject" class="form-control" id="txtsubject" />
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                        @*<i class="glyphicon glyphicon-plus-sign" id="image"></i>*@
+                                        <input type="text" placeholder="Invities, X, Y,Z" class="form-control" id="txtAttendees" />
+                                    </div>
+                                    @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                            <input type="text" placeholder="Apologies,X,Y,Z" class="form-control" id="txtApologies" />
+                                        </div>*@
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                        <input type="text" placeholder="CC,X,Y,Z" class="form-control" id="txtcc" />
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                        <input type="text" placeholder="Location" class="form-control" id="txtLocation" />
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fieldr datepickers">
+                                        <input type="text" placeholder="Date/Time" class="form-control" id="Meetingdatepicker" />
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                        <input type="button" class="k-button btn btn-lg btn-group-sm btn-default ScheduleNextMeeting" id="ScheduleNextMeeting" value="Schedule Next Meeting " style="" />
+                                    </div>
+                                    @*<div class="meetinActions col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                                                <input type="button" class="btn btn-lg btn-default ScheduleMeeting btn-group-sm" value="Schedule Meeting and send invitations" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                                                <input type="button" class="btn btn-lg btn-group-sm btn-default StartMeetingNow" value="Start Meeting Now" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                                                <input type="button" class="btn btn-lg btn-default UpdateMeeting btn-group-sm" value="Schedule for Later" style="display:none;" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                                                <input type="button" class="btn btn-lg btn-group-sm btn-default StartUpcomingMeetingNow" value="Start Meeting Now" style="display:none;" />
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                                <input type="button" class="btn btn-lg btn-group-sm btn-default ScheduleNextMeeting" value="Schedule Next Meeting " style="display:none;" />
+                                            </div>
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 fourthdBlock">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fourthdBlockdiv">
+                        <div id="AgendaListGrid" style="height:280px;"></div>
+
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <div class="EventBtns">
+                            <span class="btnHeader btn btn-circle btn-default badge addheading">H</span>
+                            <span class="btnTopic btn btn-circle btn-default badge topicadding">T</span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="meetinActions col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                        <input type="button" class="k-button btn btn-lg btn-default ScheduleMeeting btn-group-sm" value="Schedule Meeting and send invitations" style="margin:20px;" />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                        <input type="button" class="k-button btn btn-lg btn-group-sm btn-default StartMeetingNow" value="Start Meeting Now" style="margin-left:13px;margin:20px" />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                        <input type="button" class="k-button btn btn-lg btn-default UpdateMeeting btn-group-sm" value="Schedule for Later" style="display:none;margin:20px" />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                        <input type="button" class="k-button btn btn-lg btn-group-sm btn-default StartUpcomingMeetingNow" id="meetingId" value="Start Meeting Now" style="display:none;margin:20px" />
+                    </div>
+
+                </div>
+
+                <div class="preloaderDiv">
+                    <img src="~/Content/Images/preloader-trans.gif" />
+                </div>
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="camerassection" data-Action="1" data-state="close" role="dialog" id="Camera" style="z-index:100000;">
+      
+            <div class="defectheader">
+                <div class="modal-header " id="editmintsbottom">
+                    <div class="topicheading">
+
+                        <input type="text" class="disabledform" style="background-color:#E7E7E7 !important;  resize: none; border: none!important;  background: none; cursor: auto!important; border-top: none;  box-shadow: none; white-space: normal;" disabled value="Topic Text" />
+                        <div class="small" style="float:right">
+                            <img src="~/Content/Images/Icons/newicons/ic_cancel_black_24dp_2x.png" alt="cancle" style="height:30px;width:30px;" id="circle" data-toggle="popover" data-content="Close the page (save the changes)">
+                        </div>
+                    </div>
+                    <div class="col-md-offset-6 col-lg-offset-6 col-md-6  col-lg-6 " style="margin-top:-9px;">
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="maindefectsection">
+                <div class="fieldsection" style="min-height:200px;">
+                    <div class="modal-body">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
+                            <div class="MinutestoeditGrid">
+                                <textarea id="minutes"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="padding:0px;margin-top:-10px;">
+
+                        <div class="col-md-offset-6 col-lg-offset-6 col-md-6  col-lg-6 " style="margin-left:0px !important">
+
+                            <div class="small">
+                                <img src="~/Content/Images/Icons/newicons/ic_photo_camera_black_24dp_2x.png" alt="Camara" style="height:30px;width:30px;" data-toggle="popover" data-content="Camera not yet supported">
+                            </div>
+                            <div class="small">
+                                <img src="~/Content/Images/Icons/newicons/ic_search_black_24dp_2x.png" alt="search" style="height:30px;width:30px;" data-toggle="popover" data-content="inspection not yet supported">
+                            </div>
+                            <div class="small">
+                                <img src="~/Content/Images/Icons/newicons/ic_check_circle_black_24dp_2x.png" alt="done" style="height:30px;width:30px;" id="addMinute">
+                            </div>
+
+
+                        </div>
+
+                        <button class="k-button" id="textButton2" style="height:30px;">Date</button>
+
+                    </div>
+
+                </div>
+                <div class="defectsubjsect ">
+                    <div class="html5camControl" style="width:100%; height:285px;"></div>
+                </div>
+
+            </div>
+        </div>
+       
+
+    <div id="inviteMemberModel" class="modal fade" role="dialog">
+        <div class="modal-dialog" id="membermodel">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add a User to the Attendees List</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="add-new-user">
+                        <div class="k-content">
+                            <div class="demo-section k-content" style="background-color:#e7e7e7;">
+
+
+                                <div class="form-inline">
+                                    <div class="form-group delegateuser row col-sm-12 ">
+                                        <input id="user-list" class="col-sm-12 col-lg-12 col-md-12 col-xs-12" />
+
+                                    </div>
+
+                                    <div style="height:3px; clear:both;"></div>
+                                </div>
+
+                                <div id="delegate-msg-div">
+                                    <div id="delegate-success-msg" style="display:none;">
+                                        <div class="alert alert-success">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            <strong id="delegate-success-msg-txt"></strong>
+                                        </div>
+                                    </div>
+                                    <div id="delegate-fail-msg" style="display:none;">
+                                        <div class="alert alert-danger">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            <strong id="delegate-fail-msg-txt"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="margin-top:-15px;">
+                    <button type="button" id="userremove" onclick="AddNewUser()" class="btn btn-default" data-dismiss="modal">Add this User</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+      
+
+
+        $(document).on("click", "#circle", function () {
+
+
+            $(".camerassection").hide();
+            //$("#editminutespopup").css("margin-top", "70px");
+        });
+        $(document).on("click", ".editminits", function () {
+            $("#editminutespopup").show();
+            $("#editminutespopup").css("width", "40%");
+            $("#editminutespopup").css("margin-top", "70px");
+        });
+        $(document).on("click", "#editminutespopup", ".close", function () {
+
+            $(".modal-dialog").css("width", "98%");
+            $(".thirdBlock").css("width", "24%");
+            $(".formcontainer").css("margin-top", "0px");
+            $("#editminutespopup").css("width", "40%");
+        });
+        $(document).on("click", ".EventBtns2", function () {
+           
+            $("#membermodel").css("width", "40%");
+            $("#membermodel").css("margin-top", "150px");
+
+            //Get the listof meeting members.
+
+            //Safety_doAjax("api/GetMeetingMembers/", 'Post', { Id: CurrentMeetingId }, 'application/json', 'json', '', function (err, result) {
+            //    if (err) {
+            //    }
+            //    else {
+            //        console.log(result);
+            //        debugger
+            //        var MeetingMembers = [];
+            //        var meetingattendiees = [];
+            //        console.log(currentMeetingSchedule.Members)
+            //        $.each(currentMeetingSchedule.Members, function (index, users) {
+            //            debugger
+            //            if (users.MemberAs == 0)
+            //            {
+            //                meetingattendiees.push(users.Member.Id);
+            //            }
+            //        });
+                    
+            //        $.each(result, function (index,Member) {
+            //            MeetingMembers.push(Member.Id);
+            //        });
+
+            //        debugger
+            //        $("#user-list").data("kendoGrid").dataSource.filter({
+            //            field: "Id",
+            //            operator: "eq",
+            //            value: meetingattendiees
+            //        });
+            //        memberdata= $("#user-list").kendoMultiSelect();
+            //        memberdata. dataSource.filter({
+            //            field: 'Id',
+            //            operator: 'eq',
+            //            value: meetingattendiees
+            //        });
+            //    }
+            //});
+
+
+            //Filter the User-List Grid
+
+
+
+
+
+        });
+        $(document).on("click", ".EventBtns3", function () {
+            
+            $("#membermodel").css("width", "40%");
+            $("#membermodel").css("margin-top", "150px");
+        });
+        $(document).on("click", "#membermodel", ".close", function () {
+            $(".modal-dialog").css("width", "98%");
+            $(".thirdBlock").css("width", "24%");
+            $(".formcontainer").css("margin-top", "0px");
+            $("#membermodel").css("width", "40%");
+        });
+
+      $("#user-list").kendoMultiSelect({
+            dataSource: selectableMeetingMembers,
+            placeholder: "Invities, X, Y,Z...",
+            dataTextField: "Name",
+            dataValueField: "Id",
+            separator: ", ",
+            select: function (e) {
+                
+            },
+            dataBound:function(){
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover({
+                placement: 'top',
+                trigger: 'hover'
+            });
+        });
+    </script>
+
+    @* Meeting View *@
+
+    <div class="modal fade MeetingView" id="MeetingView" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title meetingHeader">New Meeting</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="meetingForm">
+
+                        <div class="mainMeetingForm">
+
+
+                            @*<span class="meetingTitle">New Meeting</span>*@
+                            <div class="fieldsform">
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                    <span>Subject</span>    <span class="ViewSubject"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                    <span>Location</span>    <span class="ViewLocation"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                    <span>Meeting Started On</span>     <span class="ViewStartDate"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                    <span>Meeting Ended On</span>     <span class="ViewEndDate"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                    <span>Meeting Conducted User</span>  <span class="ViewCreatedUser"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                    <span>Meeting Attendees</span>   <span class="ViewAttendees"></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field">
+                                    <span>Meeting Apologies</span>   <span class="ViewApologies"></span>
+                                </div>
+                                @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 field datepickers">
+                                        <span></span>
+                                        <span></span>
+                                    </div>*@
+
+
+                            </div>
+
+                            <div class="meetinActions col-lg-12 col-md-12 col-sm-12 col-xs-12  ">
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-lg-offset-3">
+                                    <input type="button" class="btn  btn-default ViewMeetingMinutes btn-sm btn-lg btn-xs " value="View Meeting Minutes" />
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
+                                    <input type="button" class="btn btn-sm btn-lg btn-xs btn-default PDFConversion" value="Generate Minutes PDF" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+
+
+    <div id="MM-Overview">
+        <div id="Grids" class="next-agendas">
+            <!------------------------------------------------Agendas------------------------------------------------------------>
+            <div class="next-agendas col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div id="Agenda-Grid"></div>
+            </div>
+
+            <!------------------------------------------------Minutes------------------------------------------------------------>
+            <div class="previous-minutes col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div id="Minuts-Grid"></div>
+            </div>
+        </div>
+        <script id="rowTemplate" type="text/x-kendo-tmpl">
+
+            <tr>
+                <td class="details">
+                    <h4 class="name">#:Subject#</h4>
+                    <div class="subfield-block">
+                        <div class="list">
+                            <div class="sublist">
+                                <p style="opacity:0.9;font-weight:bold;">#:Location.Name#</p>
+                            </div>
+                            <div class="location-block">
+                                <div style="opacity:0.6;">#:StartDate#</div>
+                                <div style="opacity:0.6;">Convened by #:CreatedUser.Name#</div>
+                            </div>
+                        </div>
+                        <div class="statusfield">
+                            <p class="Date" style="margin-top:10px;">
+                                #if(StatusType == 2){#
+                                Minute
+                                #}else{#
+                                Agenda
+                                #}#
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </script>
+        @*<script id="membersGridTemplate" type="text/x-kendo-tmpl">
+                <tr role="row">
+                    <td role="gridcell">#:Member.Name#</td>
+                    #if(Member.IsAttend == null){#
+                    <td role="gridcell"><a onclick="TakeUserAttended('#:Id#',1)"><img src="/apps/A000022/content/images/icons/newicons/down_filled1600.png" style="width:30px;height:30px;margin-left: -7px;cursor:pointer;  " id="iconsforconduct" /></a></td>
+                    <td role="gridcell"><a onclick="TakeUserAttended('#:Id#',0)"><img src="/apps/A000022/Content/Images/Icons/newicons/ic_cancel_black_24dp_2x.png" alt="cancle" style="height:30px;width:30px;margin-left: -15px;cursor:pointer" id="circle" /></a></td>
+                    #}#
+                    #if(Member.IsAttend == 1){#
+                    <td colspan="2" role="gridcell"><img src="/apps/A000022/content/images/icons/newicons/down_filled1600.png" style="width:30px;height:30px;margin-left: -7px;cursor:pointer;  " id="iconsforconduct" /></td>
+                    #}#
+                    #if(Member.IsAttend == 0){#
+                    <td colspan="2" role="gridcell"><img src="/apps/A000022/Content/Images/Icons/newicons/ic_cancel_black_24dp_2x.png" alt="cancle" style="height:30px;width:30px;margin-left: -15px;cursor:pointer" id="circle" /></td>
+                    #}#
+                </tr>
+            </script>*@
+        <script id="membersInviteGridTemplate" type="text/x-kendo-tmpl">
+            #if(MemberAs == 0){#
+            
+                <tr role="row" id="usertr">
+                    <td role="gridcell" colspan="2">#:Member.Name#</td>
+
+                    <td role="gridcell" id="tduserheight"><a onclick="TakeUserAttended('#:Id#',1,3)"><img src="/apps/A000022/content/images/icons/newicons/ic_arrow_downward_black_24dp_1x.png" style="width:30px;height:30px;margin-left: -7px;cursor:pointer;  " id="iconsforconduct" /></a></td>
+
+
+                </tr>
+            
+            #}#
+        </script>
+        <script id="membersCCGridTemplate" type="text/x-kendo-tmpl">
+            #if(MemberAs == 2||MemberAs == 3){#
+            <tr role="row">
+                <td role="gridcell" colspan="2">#:Member.Name#</td>
+
+                <td role="gridcell"><a onclick="TakeUserAttended('#:Id#', 1,0)"><img src="/apps/A000022/content/images/icons/newicons/ic_arrow_upward_black_24dp_1x.png" style="width:30px;height:30px;margin-left: -7px;cursor:pointer;  " id="iconsforconduct" /></a></td>
+
+            </tr>
+            #}#
+        </script>
+    </div>
+
+    <script>
+        $(document).on("click", ".topicheading", function () {
+            $(this).children("input").removeAttr("disabled");
+            $(this).children("input").removeClass("disabledform");
+            $(this).children("input").addClass("blur");
+
+        });
+        $(document).on("blur", ".blur", function () {
+
+            $(this).removeAttr("disabled");
+            $(this).addClass("disabledform");
+            $(this).removeClass("blur");
+        });
+
+        
+
+        
+
+    </script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#circle[data-toggle="popover"]').popover({
+                placement: 'bottom',
+                trigger: 'hover'
+            });
+            $('[data-toggle="popover"]').popover({
+                placement: 'top',
+                trigger: 'hover'
+            });
+        });
+    </script>
+    <script>
+
+        $('.camerassection').show("slide", { direction: 'right' }, 500, function () {
+        });
+        $('.camerassection').hide("slide", { direction: 'right' }, 500, function () {
+        });
+        $('.camerassection').css({ "left": "35%", "top": "20px" });
+        $(".camerassection").draggable({ handle: '.defectheader', containment: "window" });
+    </script>
+
+
+
+
+>

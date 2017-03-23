@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MM_P0000001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MM_Agenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar(max)" Nullable="false" />
+          <Property Name="MeetingId" Type="int" Nullable="false" />
+          <Property Name="HeadingId" Type="int" />
+          <Property Name="SerialId" Type="varchar" MaxLength="10" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="IsCompleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="MM_Meeting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="varchar(max)" />
+          <Property Name="StartDateTime" Type="datetime" />
+          <Property Name="EndDateTime" Type="datetime" />
+          <Property Name="MeetingLocationId" Type="int" Nullable="false" />
+          <Property Name="MeetingStatus" Type="int" Nullable="false" />
+          <Property Name="CreatedUserId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ParentMeetingId" Type="int" />
+        </EntityType>
+        <EntityType Name="MM_MeetingLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MM_MeetingMember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="MeetingId" Type="int" Nullable="false" />
+          <Property Name="MemberAs" Type="int" />
+          <Property Name="IsAttend" Type="bit" />
+        </EntityType>
+        <EntityType Name="MM_Minute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar(max)" Nullable="false" />
+          <Property Name="AgendaId" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MM_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__MM_Agenda__Headi__2F2FFC0C">
+          <End Role="MM_Agenda" Type="Self.MM_Agenda" Multiplicity="0..1" />
+          <End Role="MM_Agenda1" Type="Self.MM_Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Agenda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Agenda1">
+              <PropertyRef Name="HeadingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Meetin__Creat__278EDA44">
+          <End Role="MM_User" Type="Self.MM_User" Multiplicity="1" />
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Meeting">
+              <PropertyRef Name="CreatedUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Meetin__Meeti__2B5F6B28">
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="1" />
+          <End Role="MM_MeetingMember" Type="Self.MM_MeetingMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Meeting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_MeetingMember">
+              <PropertyRef Name="MeetingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Meetin__Paren__37C5420D">
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="0..1" />
+          <End Role="MM_Meeting1" Type="Self.MM_Meeting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Meeting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Meeting1">
+              <PropertyRef Name="ParentMeetingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Minute__Agend__536D5C82">
+          <End Role="MM_Agenda" Type="Self.MM_Agenda" Multiplicity="0..1" />
+          <End Role="MM_Minute" Type="Self.MM_Minute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Agenda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Minute">
+              <PropertyRef Name="AgendaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Minute__Creat__546180BB">
+          <End Role="MM_User" Type="Self.MM_User" Multiplicity="1" />
+          <End Role="MM_Minute" Type="Self.MM_Minute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Minute">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Minute__Modif__5555A4F4">
+          <End Role="MM_User" Type="Self.MM_User" Multiplicity="0..1" />
+          <End Role="MM_Minute" Type="Self.MM_Minute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Minute">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MM_Agenda_ToTable">
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="1" />
+          <End Role="MM_Agenda" Type="Self.MM_Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Meeting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Agenda">
+              <PropertyRef Name="MeetingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MM_Meeting_ToTable">
+          <End Role="MM_MeetingLocation" Type="Self.MM_MeetingLocation" Multiplicity="1" />
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_MeetingLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Meeting">
+              <PropertyRef Name="MeetingLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MM_MeetingMember_ToTable">
+          <End Role="MM_User" Type="Self.MM_User" Multiplicity="1" />
+          <End Role="MM_MeetingMember" Type="Self.MM_MeetingMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_MeetingMember">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MM_P0000001ModelStoreContainer">
+          <EntitySet Name="MM_Agenda" EntityType="Self.MM_Agenda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MM_Meeting" EntityType="Self.MM_Meeting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MM_MeetingLocation" EntityType="Self.MM_MeetingLocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MM_MeetingMember" EntityType="Self.MM_MeetingMember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MM_Minute" EntityType="Self.MM_Minute" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MM_User" EntityType="Self.MM_User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__MM_Agenda__Headi__2F2FFC0C" Association="Self.FK__MM_Agenda__Headi__2F2FFC0C">
+            <End Role="MM_Agenda" EntitySet="MM_Agenda" />
+            <End Role="MM_Agenda1" EntitySet="MM_Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Meetin__Creat__278EDA44" Association="Self.FK__MM_Meetin__Creat__278EDA44">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Meetin__Meeti__2B5F6B28" Association="Self.FK__MM_Meetin__Meeti__2B5F6B28">
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+            <End Role="MM_MeetingMember" EntitySet="MM_MeetingMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Meetin__Paren__37C5420D" Association="Self.FK__MM_Meetin__Paren__37C5420D">
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+            <End Role="MM_Meeting1" EntitySet="MM_Meeting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Minute__Agend__536D5C82" Association="Self.FK__MM_Minute__Agend__536D5C82">
+            <End Role="MM_Agenda" EntitySet="MM_Agenda" />
+            <End Role="MM_Minute" EntitySet="MM_Minute" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Minute__Creat__546180BB" Association="Self.FK__MM_Minute__Creat__546180BB">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_Minute" EntitySet="MM_Minute" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Minute__Modif__5555A4F4" Association="Self.FK__MM_Minute__Modif__5555A4F4">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_Minute" EntitySet="MM_Minute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MM_Agenda_ToTable" Association="Self.FK_MM_Agenda_ToTable">
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+            <End Role="MM_Agenda" EntitySet="MM_Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MM_Meeting_ToTable" Association="Self.FK_MM_Meeting_ToTable">
+            <End Role="MM_MeetingLocation" EntitySet="MM_MeetingLocation" />
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MM_MeetingMember_ToTable" Association="Self.FK_MM_MeetingMember_ToTable">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_MeetingMember" EntitySet="MM_MeetingMember" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MM_P0000001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MM_Agenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MeetingId" Type="Int32" Nullable="false" />
+          <Property Name="HeadingId" Type="Int32" />
+          <Property Name="SerialId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OrderId" Type="Int32" />
+          <NavigationProperty Name="MM_Agenda1" Relationship="Self.FK__MM_Agenda__Headi__090A5324" FromRole="MM_Agenda" ToRole="MM_Agenda1" />
+          <NavigationProperty Name="MM_Agenda2" Relationship="Self.FK__MM_Agenda__Headi__090A5324" FromRole="MM_Agenda1" ToRole="MM_Agenda" />
+          <NavigationProperty Name="MM_Meeting" Relationship="Self.FK_MM_Agenda_ToTable" FromRole="MM_Agenda" ToRole="MM_Meeting" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <NavigationProperty Name="MM_Minute" Relationship="MM_P0000001Model.FK__MM_Minute__Agend__536D5C82" FromRole="MM_Agenda" ToRole="MM_Minute" />
+        </EntityType>
+        <EntityType Name="MM_Meeting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+          <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+          <Property Name="MeetingLocationId" Type="Int32" Nullable="false" />
+          <Property Name="MeetingStatus" Type="Int32" Nullable="false" />
+          <Property Name="CreatedUserId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MM_Agenda" Relationship="Self.FK_MM_Agenda_ToTable" FromRole="MM_Meeting" ToRole="MM_Agenda" />
+          <NavigationProperty Name="MM_User" Relationship="Self.FK__MM_Meetin__Creat__0169315C" FromRole="MM_Meeting" ToRole="MM_User" />
+          <NavigationProperty Name="MM_MeetingMember" Relationship="Self.FK__MM_Meetin__Meeti__0539C240" FromRole="MM_Meeting" ToRole="MM_MeetingMember" />
+          <NavigationProperty Name="MM_MeetingLocation" Relationship="Self.FK_MM_Meeting_ToTable" FromRole="MM_Meeting" ToRole="MM_MeetingLocation" />
+          <Property Name="ParentMeetingId" Type="Int32" />
+          <NavigationProperty Name="MM_Meeting1" Relationship="MM_P0000001Model.FK__MM_Meetin__Paren__37C5420D" FromRole="MM_Meeting" ToRole="MM_Meeting1" />
+          <NavigationProperty Name="MM_Meeting2" Relationship="MM_P0000001Model.FK__MM_Meetin__Paren__37C5420D" FromRole="MM_Meeting1" ToRole="MM_Meeting" />
+        </EntityType>
+        <EntityType Name="MM_MeetingLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocationName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MM_Meeting" Relationship="Self.FK_MM_Meeting_ToTable" FromRole="MM_MeetingLocation" ToRole="MM_Meeting" />
+        </EntityType>
+        <EntityType Name="MM_MeetingMember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="MeetingId" Type="Int32" Nullable="false" />
+          <Property Name="MemberAs" Type="Int32" />
+          <Property Name="IsAttend" Type="Boolean" />
+          <NavigationProperty Name="MM_Meeting" Relationship="Self.FK__MM_Meetin__Meeti__0539C240" FromRole="MM_MeetingMember" ToRole="MM_Meeting" />
+          <NavigationProperty Name="MM_User" Relationship="Self.FK_MM_MeetingMember_ToTable" FromRole="MM_MeetingMember" ToRole="MM_User" />
+        </EntityType>
+        <EntityType Name="MM_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MM_Meeting" Relationship="Self.FK__MM_Meetin__Creat__0169315C" FromRole="MM_User" ToRole="MM_Meeting" />
+          <NavigationProperty Name="MM_MeetingMember" Relationship="Self.FK_MM_MeetingMember_ToTable" FromRole="MM_User" ToRole="MM_MeetingMember" />
+          <NavigationProperty Name="MM_Minute" Relationship="MM_P0000001Model.FK__MM_Minute__Creat__546180BB" FromRole="MM_User" ToRole="MM_Minute" />
+          <NavigationProperty Name="MM_Minute1" Relationship="MM_P0000001Model.FK__MM_Minute__Modif__5555A4F4" FromRole="MM_User" ToRole="MM_Minute" />
+        </EntityType>
+        <Association Name="FK__MM_Agenda__Headi__090A5324">
+          <End Role="MM_Agenda" Type="Self.MM_Agenda" Multiplicity="0..1" />
+          <End Role="MM_Agenda1" Type="Self.MM_Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Agenda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Agenda1">
+              <PropertyRef Name="HeadingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MM_Agenda_ToTable">
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="1" />
+          <End Role="MM_Agenda" Type="Self.MM_Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Meeting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Agenda">
+              <PropertyRef Name="MeetingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Meetin__Creat__0169315C">
+          <End Role="MM_User" Type="Self.MM_User" Multiplicity="1" />
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Meeting">
+              <PropertyRef Name="CreatedUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Meetin__Meeti__0539C240">
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="1" />
+          <End Role="MM_MeetingMember" Type="Self.MM_MeetingMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Meeting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_MeetingMember">
+              <PropertyRef Name="MeetingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MM_Meeting_ToTable">
+          <End Role="MM_MeetingLocation" Type="Self.MM_MeetingLocation" Multiplicity="1" />
+          <End Role="MM_Meeting" Type="Self.MM_Meeting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_MeetingLocation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Meeting">
+              <PropertyRef Name="MeetingLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MM_MeetingMember_ToTable">
+          <End Role="MM_User" Type="Self.MM_User" Multiplicity="1" />
+          <End Role="MM_MeetingMember" Type="Self.MM_MeetingMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_MeetingMember">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MM_P0000001Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MM_Agenda" EntityType="Self.MM_Agenda" />
+          <EntitySet Name="MM_Meeting" EntityType="Self.MM_Meeting" />
+          <EntitySet Name="MM_MeetingLocation" EntityType="Self.MM_MeetingLocation" />
+          <EntitySet Name="MM_MeetingMember" EntityType="Self.MM_MeetingMember" />
+          <EntitySet Name="MM_User" EntityType="Self.MM_User" />
+          <AssociationSet Name="FK__MM_Agenda__Headi__090A5324" Association="Self.FK__MM_Agenda__Headi__090A5324">
+            <End Role="MM_Agenda" EntitySet="MM_Agenda" />
+            <End Role="MM_Agenda1" EntitySet="MM_Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MM_Agenda_ToTable" Association="Self.FK_MM_Agenda_ToTable">
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+            <End Role="MM_Agenda" EntitySet="MM_Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Meetin__Creat__0169315C" Association="Self.FK__MM_Meetin__Creat__0169315C">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Meetin__Meeti__0539C240" Association="Self.FK__MM_Meetin__Meeti__0539C240">
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+            <End Role="MM_MeetingMember" EntitySet="MM_MeetingMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MM_Meeting_ToTable" Association="Self.FK_MM_Meeting_ToTable">
+            <End Role="MM_MeetingLocation" EntitySet="MM_MeetingLocation" />
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MM_MeetingMember_ToTable" Association="Self.FK_MM_MeetingMember_ToTable">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_MeetingMember" EntitySet="MM_MeetingMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Meetin__Paren__37C5420D" Association="MM_P0000001Model.FK__MM_Meetin__Paren__37C5420D">
+            <End Role="MM_Meeting" EntitySet="MM_Meeting" />
+            <End Role="MM_Meeting1" EntitySet="MM_Meeting" />
+          </AssociationSet>
+          <EntitySet Name="MM_Minute" EntityType="MM_P0000001Model.MM_Minute" />
+          <AssociationSet Name="FK__MM_Minute__Agend__536D5C82" Association="MM_P0000001Model.FK__MM_Minute__Agend__536D5C82">
+            <End Role="MM_Agenda" EntitySet="MM_Agenda" />
+            <End Role="MM_Minute" EntitySet="MM_Minute" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Minute__Creat__546180BB" Association="MM_P0000001Model.FK__MM_Minute__Creat__546180BB">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_Minute" EntitySet="MM_Minute" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MM_Minute__Modif__5555A4F4" Association="MM_P0000001Model.FK__MM_Minute__Modif__5555A4F4">
+            <End Role="MM_User" EntitySet="MM_User" />
+            <End Role="MM_Minute" EntitySet="MM_Minute" />
+          </AssociationSet>
+          </EntityContainer>
+        <Association Name="FK__MM_Meetin__Paren__37C5420D">
+          <End Type="MM_P0000001Model.MM_Meeting" Role="MM_Meeting" Multiplicity="0..1" />
+          <End Type="MM_P0000001Model.MM_Meeting" Role="MM_Meeting1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Meeting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Meeting1">
+              <PropertyRef Name="ParentMeetingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MM_Minute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AgendaId" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MM_Agenda" Relationship="MM_P0000001Model.FK__MM_Minute__Agend__536D5C82" FromRole="MM_Minute" ToRole="MM_Agenda" />
+          <NavigationProperty Name="MM_User" Relationship="MM_P0000001Model.FK__MM_Minute__Creat__546180BB" FromRole="MM_Minute" ToRole="MM_User" />
+          <NavigationProperty Name="MM_User1" Relationship="MM_P0000001Model.FK__MM_Minute__Modif__5555A4F4" FromRole="MM_Minute" ToRole="MM_User" />
+        </EntityType>
+        <Association Name="FK__MM_Minute__Agend__536D5C82">
+          <End Type="MM_P0000001Model.MM_Agenda" Role="MM_Agenda" Multiplicity="0..1" />
+          <End Type="MM_P0000001Model.MM_Minute" Role="MM_Minute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_Agenda">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Minute">
+              <PropertyRef Name="AgendaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Minute__Creat__546180BB">
+          <End Type="MM_P0000001Model.MM_User" Role="MM_User" Multiplicity="1" />
+          <End Type="MM_P0000001Model.MM_Minute" Role="MM_Minute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Minute">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MM_Minute__Modif__5555A4F4">
+          <End Type="MM_P0000001Model.MM_User" Role="MM_User" Multiplicity="0..1" />
+          <End Type="MM_P0000001Model.MM_Minute" Role="MM_Minute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MM_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MM_Minute">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MM_P0000001ModelStoreContainer" CdmEntityContainer="MM_P0000001Entities">
+          <EntitySetMapping Name="MM_Agenda">
+            <EntityTypeMapping TypeName="MM_P0000001Model.MM_Agenda">
+              <MappingFragment StoreEntitySet="MM_Agenda">
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MeetingId" ColumnName="MeetingId" />
+                <ScalarProperty Name="HeadingId" ColumnName="HeadingId" />
+                <ScalarProperty Name="SerialId" ColumnName="SerialId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MM_Meeting">
+            <EntityTypeMapping TypeName="MM_P0000001Model.MM_Meeting">
+              <MappingFragment StoreEntitySet="MM_Meeting">
+                <ScalarProperty Name="ParentMeetingId" ColumnName="ParentMeetingId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="MeetingLocationId" ColumnName="MeetingLocationId" />
+                <ScalarProperty Name="MeetingStatus" ColumnName="MeetingStatus" />
+                <ScalarProperty Name="CreatedUserId" ColumnName="CreatedUserId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MM_MeetingLocation">
+            <EntityTypeMapping TypeName="MM_P0000001Model.MM_MeetingLocation">
+              <MappingFragment StoreEntitySet="MM_MeetingLocation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MM_MeetingMember">
+            <EntityTypeMapping TypeName="MM_P0000001Model.MM_MeetingMember">
+              <MappingFragment StoreEntitySet="MM_MeetingMember">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="MeetingId" ColumnName="MeetingId" />
+                <ScalarProperty Name="MemberAs" ColumnName="MemberAs" />
+                <ScalarProperty Name="IsAttend" ColumnName="IsAttend" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MM_User">
+            <EntityTypeMapping TypeName="MM_P0000001Model.MM_User">
+              <MappingFragment StoreEntitySet="MM_User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MM_Minute">
+            <EntityTypeMapping TypeName="MM_P0000001Model.MM_Minute">
+              <MappingFragment StoreEntitySet="MM_Minute">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AgendaId" ColumnName="AgendaId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

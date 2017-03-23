@@ -1,0 +1,96 @@
+﻿
+
+
+@*@*@model MM.Core.Entities.Meeting
+
+
+
+ 
+
+
+    <table id="MeetimgTitle">
+
+        <tr><td><font style="font-size:18px;font-family:Calibri;">Agenda</font></td></tr>
+    </table>
+    <table id="MeetingSubject">
+
+        <tr><td><font style="font-size:18px;font-family:Calibri;color:blue;">@Model.Subject</font></td></tr>
+    </table>
+
+    <table id="Meetingdata" cellpadding="10">
+        <tr>
+            <td width="30%"><font style="font-size:14px;font-family:Calibri;">When</font></td>
+            <td width="70%"><font size="4" face="calibri">@Model.StartDate</font></td>
+        </tr>
+        <tr>
+            <td width="30%"><font style="font-size:14px;font-family:Calibri;">Where</font></td>
+            <td width="70%"><font size="4" face="calibri">@Model.Location.Name</font></td>
+        </tr>
+        <tr>
+            <td width="30%"><font style="font-size:14px;font-family:Calibri;">Who</font></td>
+            <td width="70%"><font size="4" face="calibri">@Model.CreatedUser.Name</font></td>
+        </tr>
+
+        <tr>
+            <td width="30%"><font style="font-size:14px;font-family:Calibri;">Attendees</font></td>
+            <td width="70%"><font size="4" face="calibri">
+                @foreach (var attendes in Model.Members)
+            {
+                if (attendes.IsAttend == true)
+                {
+                    <span>@attendes</span>
+                }
+            }</font></td>
+        </tr>
+
+        <tr>
+            <td width="30%"><font style="font-size:14px;font-family:Calibri;">Appologies</font></td>
+            <td width="70%"><font size="4" face="calibri">
+                @foreach (var apologies in Model.Members)
+                {
+                    if (apologies.IsAttend == false)
+                    {
+                        <span>@apologies.Member.Name</span>
+                    }
+                }
+                </font></td>
+        </tr>
+
+        <tr>
+            <td width="30%"><font style="font-size:14px;font-family:Calibri;">CC</font></td>
+            <td width="70%"><font size="4" face="calibri">
+                                @foreach (var CCd in Model.Members)
+                                {
+                                    if (CCd.MemberAs == MM.Core.Entities.MeetingMemberType.Cc)
+                                    {
+                                        // <span>@CCd.Member.Name</span>
+                                    }
+                                }
+                </font></td>
+        </tr>
+        <tr>
+            <td width="30%"><font style="font-size:14px;font-family:Calibri;">Agenda</font></td>
+            <td width="70%">
+                @*<table>
+                    <tr>
+                        @foreach (var heading in Model.Titles)
+                        {
+                            if (heading.Title == null)
+                            {
+                                <span>@heading.Title</span>
+                                foreach (var subtopic in Model.Titles)
+                                {
+                                    <span>@subtopic.SubTitles</span>
+                                }
+                            }
+                        }
+                    </tr>
+                </table>*@
+            </td>
+        </tr>
+    </table>
+
+
+
+
+

@@ -1,0 +1,62 @@
+﻿@model MM.Core.Entities.Meeting
+    
+
+<table style="float:left;border:inset;padding:5px;height:170px">
+    <tr>
+        <td  style="background-color:deepskyblue;width:70px;height:2px;text-align:center">@Model.StartDate.ToString("MMM")</td>
+
+    </tr>
+    <tr>
+        <td  style="width:70px;height:2px;text-align:center">@Model.StartDate.ToString("dd") </td>
+
+    </tr>
+    <tr>
+        <td  style="width:70px;height:2px;text-align:center">@Model.StartDate.ToString("ddd")</td>
+
+    </tr>
+</table>
+
+
+
+<table id="MeetimgTitle;" style="border:outset;height:100px;">
+
+    <tr><td><font style="font-size:18px;font-family:Calibri;width:70px;">@Model.CreatedUser.Name </font></td></tr>
+    <tr><td><font style="font-size:18px;font-family:Calibri;">@Model.Subject</font></td></tr>
+    <tr>
+        <td>
+
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">When</font>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">&nbsp;&nbsp;</font>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">@Model.StartDate </font>
+
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">Where</font>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">&nbsp;&nbsp;</font>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">@Model.Location.Name</font>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">Who</font>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">&nbsp;&nbsp;</font>
+            <font style="font-size:18px;font-family:Calibri;width:70px;" colspan="2">@Model.CreatedUser.Name</font>
+        </td>
+    </tr>
+
+    <tr>
+
+        <td>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Yes</button>
+                <button type="button" class="btn btn-primary">Maybe</button>
+                <button type="button" class="btn btn-primary">No</button>
+            </div>
+        </td>
+
+
+
+</table>

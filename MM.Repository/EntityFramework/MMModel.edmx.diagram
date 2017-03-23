@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6356bf4016384315a26ef31161005ddd" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="MM_P0000001Model.MM_Agenda" Width="1.5" PointX="5.625" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MM_P0000001Model.MM_Meeting" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MM_P0000001Model.MM_MeetingLocation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MM_P0000001Model.MM_MeetingMember" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MM_P0000001Model.MM_User" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="MM_P0000001Model.FK__MM_Agenda__Headi__090A5324" ManuallyRouted="false" />
+        <AssociationConnector Association="MM_P0000001Model.FK_MM_Agenda_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="MM_P0000001Model.FK__MM_Meetin__Creat__0169315C" ManuallyRouted="false" />
+        <AssociationConnector Association="MM_P0000001Model.FK__MM_Meetin__Meeti__0539C240" ManuallyRouted="false" />
+        <AssociationConnector Association="MM_P0000001Model.FK_MM_Meeting_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="MM_P0000001Model.FK_MM_MeetingMember_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="MM_P0000001Model.FK__MM_Meetin__Paren__37C5420D" />
+        <EntityTypeShape EntityType="MM_P0000001Model.MM_Minute" Width="1.5" PointX="7.875" PointY="7.375" />
+        <AssociationConnector Association="MM_P0000001Model.FK__MM_Minute__Agend__536D5C82" />
+        <AssociationConnector Association="MM_P0000001Model.FK__MM_Minute__Creat__546180BB" />
+        <AssociationConnector Association="MM_P0000001Model.FK__MM_Minute__Modif__5555A4F4" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

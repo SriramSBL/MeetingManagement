@@ -1,0 +1,1464 @@
+﻿.PT_left_bar {
+    display: none !important;
+}
+
+.NewMeeting {
+    display: block;
+}
+
+.PT_btn, .StopMeeting {
+    display: none !important;
+}
+
+.Meeting Subject {
+    width: 140px;
+}
+
+.details {
+    padding: 0px !important;
+    height: 90px !important;
+    width: 100% !important;
+}
+
+.subfield-block {
+    width: 100%;
+}
+
+.name {
+    height: 47px;
+    color: deepskyblue;
+    font-weight: bold;
+    width: 90%;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0px;
+}
+
+.list {
+    width: 65% !important;
+    height: 70px;
+    margin-top: 7px;
+    float: left;
+    font-size: 12px;
+    line-height: 1.1em;
+}
+
+.statusfield {
+    width: 30%;
+    text-align: left;
+    opacity: 0.6;
+    font-size: 20px;
+    float: right;
+}
+
+.sublist {
+    font-size: 16px;
+    height: 28px;
+    width: 100%;
+    /*margin-top:-22px;*/
+}
+.sublist p{
+    width: 100%;
+    height: 26px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.location-block {
+    width: 80%;
+    line-height: 1.5em;
+    height: 40px;
+}
+
+.k-grid-header {
+    /*display:none;*/
+}
+
+.k-grid-content k-auto-scrollable, .k-grid k-widget {
+    overflow-y: hidden;
+}
+
+#MM-Overview {
+    left: 0px;
+    /*position: absolute;*/
+    width: 100%;
+}
+
+.NewRisk {
+    display: none;
+}
+
+.field {
+    min-height: 50px;
+    clear: both;
+}
+
+.meetingTitle {
+    padding-left: 15px;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    clear: both;
+}
+
+.field .form-control {
+    border-radius: 0px !important;
+}
+
+.ScheduleMeeting, .StartMeetingNow {
+    margin-top: 10px;
+    border-radius: 0px;
+}
+
+#txtAttendees, #txtApologies, #txtcc, #Meetingdatepicker {
+    width: 100%;
+    border: 1px solid #ddd;
+    height: 26px;
+}
+
+.field .k-autocomplete {
+    width: 100%;
+    border: 1px solid #ddd;
+    height: 34px;
+}
+
+.datepickers span:first-child {
+    width: 87%;
+    height: 33px;
+}
+
+.datepickers span span:first-child {
+    width: 100%;
+}
+
+.k-icon, .k-i-calendar {
+    height: 18px !important;
+    overflow: hidden;
+    width: 20px !important;
+}
+
+.k-icon, .k-i-clock {
+}
+
+.k-select {
+    display: block !important;
+}
+
+.modal-content {
+    background-color: #e7e7e7;
+    border-radius: 0px !important;
+}
+
+.separtor {
+    display: block;
+    clear: both;
+    min-height: 45px;
+    line-height: 45px;
+}
+
+    .separtor span:first-child {
+        float: left;
+        display: block;
+        width: 10%;
+        font-weight: 600;
+    }
+
+    .separtor span:last-child {
+        float: left;
+        display: block;
+        width: 85%;
+        border: 1px solid #bbb;
+        margin-top: 22px;
+    }
+
+.modal-header {
+    border-bottom: 1px solid #bbb;
+}
+
+.lastMeetingClose {
+    clear: both;
+}
+
+.CloseMessage {
+    float: left;
+    width: 75%;
+    display: block;
+    font-size: 15px;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.CloseBtn {
+    width: 25%;
+    float: right;
+    display: block;
+    height: 45px;
+    background-color: #c3c1c1;
+    border: 1px solid #ddd;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    /* border-radius: 3px; */
+    border: 1px solid #909090;
+    cursor: pointer;
+}
+/*#Agenda-Grid,#Minuts-Grid{
+             height: 100%!important;
+         }*/
+/*.previous-minutes,.next-agendas{
+             height:100%;
+         }*/
+.MeetingSchedules {
+    clear: both;
+    min-height: 100px;
+    overflow: hidden;
+    display: none;
+}
+
+#MM-Overview .col-lg-6 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+@media screen and (max-width: 1366px) and (min-width:992px) {
+    #MM-Overview {
+        height: 100%;
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 120px) {
+    #MM-Overview {
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+#MeetingView .field span:first-child {
+    color: #9c9999;
+    font-size: 14px;
+    display: block;
+    float: left;
+    width: 40%;
+    min-height: 50px;
+    line-height: 50px;
+}
+
+#MeetingView .field span:nth-child(2) {
+    font-size: 14px;
+    display: block;
+    float: left;
+    width: 60%;
+    padding-left: 20px;
+    min-height: 50px;
+    border-left: 1px solid #abaaaa;
+    padding-top: 15px;
+    color: #9c9999;
+}
+
+#MeetingView .modal-body {
+    /*padding:0px!important;*/
+}
+
+#MeetingView .field {
+    border: 1px solid #abaaaa;
+    min-height: 50px;
+    overflow: hidden;
+    border-top: none;
+}
+
+    #MeetingView .field:first-child {
+        border-top: 1px solid #abaaaa;
+    }
+
+.meetinActions {
+    clear: both;
+    min-height: 50px;
+    margin: 10px auto;
+}
+
+.ViewMeetingMinutes, .PDFConversion {
+    border-radius: 0px;
+}
+
+#MeetingView .meetinActions .ViewMeetingMinutes, .PDFConversion {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+#MeetingView.modal {
+    top: 70px !important;
+}
+/*#MeetingView .modal-content{
+             background-color:white;
+             border-radius:0px;
+             border:1px solid #bbb;
+         }*/
+.modal-backdrop {
+    opacity: 0 !important;
+}
+
+.formcontainer {
+    margin-top: 70px;
+}
+
+
+
+.modal {
+}
+
+#MeetingView .fieldsform {
+    background-color: white;
+}
+
+.fieldsform {
+    padding-top: 15px;
+}
+
+.PT_Top {
+}
+
+    .PT_Top:nth-of-type(3) {
+        position: absolute !important;
+        right: 180px !important;
+        top: 8px;
+        z-index: 10000;
+    }
+/*.StopMeeting{
+                display:block!important;
+            }*/
+.preloaderDiv {
+    position: fixed;
+    top: 0px;
+    left: 20px;
+    display: none;
+}
+
+    .preloaderDiv img {
+        position: fixed;
+        top: 50%;
+        left: 49%;
+    }
+
+
+
+.next-agendas {
+    padding: 0px !important;
+}
+
+.k-grid-header {
+    padding-right: 0px !important;
+}
+
+.details {
+    padding-left: 0px !important;
+}
+
+
+.ScheduleNextMeeting {
+    width: 100%;
+}
+
+.modal-content {
+    min-height: 100px;
+    overflow: hidden;
+    padding: 0px !important;
+}
+
+
+#AgendaListGrid .k-grid-content {
+    height: 240px;
+}
+
+#AgendaListGrid {
+    cursor: pointer;
+}
+
+    #AgendaListGrid > .k-grid-content k-auto-scrollable > tr:hover {
+        border: 1px solid red !important;
+        background-color: red !important;
+    }
+
+
+
+.firstBlock {
+    display: block;
+    border: 1px solid #CCCCCC;
+    height: 535px;
+    padding: 0px;
+}
+
+.blockHeadings {
+    padding: 0px;
+    background-color: #ddd;
+}
+
+    .blockHeadings span {
+        padding-left: 5px;
+        width: 100%;
+    }
+
+.secondBlock {
+    display: block;
+    border: 1px solid #CCCCCC;
+    min-height: 535px;
+    padding: 0px;
+}
+
+.thirdBlock {
+    display: block;
+    border: 1px solid #CCCCCC;
+    padding: 0px;
+    padding-bottom: 15px;
+}
+
+#InvitiesGrid, #CcsGrid {
+    margin: 10px;
+}
+
+    #InvitiesGrid .k-grid-content {
+        padding-bottom: 10px;
+        height: 180px;
+    }
+
+    #InvitiesGrid .k-grid-header {
+        display: none;
+    }
+
+#conductMeetingGrid .k-grid-header {
+    display: none;
+}
+
+#conductMeetingGrid .k-grid-content {
+    height: 100% !important;
+}
+
+    #conductMeetingGrid .k-grid-content table {
+        /*min-width: 1116px;*/
+    }
+
+
+#CcsGrid .k-grid-content {
+    padding-bottom: 10px;
+    height: 120px;
+}
+
+#CcsGrid .k-grid-header {
+    display: none;
+}
+/*---------------------------------------------------------------*/
+.main {
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.subject {
+    height: 10%;
+    width: 100%;
+}
+
+.whoareattended {
+    height: 50%;
+    width: 100%;
+    position: relative;
+}
+
+.email {
+    height: 30%;
+    width: 100%;
+    position: relative;
+}
+
+.loc {
+    height: 10%;
+    width: 100%;
+}
+
+.con {
+    height: 90%;
+    width: 90%;
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 2%;
+    overflow: auto;
+}
+
+.con2 {
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 1%;
+    overflow: auto;
+}
+
+#input {
+    margin-top: 2%;
+    margin-left: 3%;
+    width: 94%;
+}
+
+#input2 {
+    margin-top: 2%;
+    margin-left: 3%;
+    width: 94%;
+}
+
+.di {
+    height: 22%;
+    width: 100%;
+    /*background-color:rebeccapurple;*/
+}
+
+.di1 {
+    width: 75%;
+    height: 100%;
+    /*background-color:palevioletred;*/
+    float: left;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.di2 {
+    width: 25%;
+    height: 100%;
+    /*background-color:black;*/
+    float: left;
+    font-size: 20px;
+    line-height: 50px;
+}
+/*--------------------------------------------------------------------------*/
+.atendess2 {
+    /*min-height:550px;*/
+    min-width: 100%;
+    border: 1px solid #CCCCCC;
+    /*background-color:red;*/
+}
+
+.conmeetingdetails {
+    /*height:99%;*/
+    width: 90%;
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 1%;
+    overflow: auto;
+    /*background-color:red;*/
+}
+
+.threeblockheading {
+    height: 10%;
+    width: 100%;
+    line-height: 57px;
+    /*background-color:aqua;*/
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.threetopic1 {
+    height: 10%;
+    width: 100%;
+    line-height: 57px;
+    /*background-color:red;*/
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.threeblockminutes1 {
+    height: 35%;
+    width: 100%;
+    /*background-color:black;*/
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.hi2 {
+    height: 75%;
+    width: 100%;
+    /*background-color:gray;*/
+}
+
+.hii2 {
+    height: 23%;
+    width: 100%;
+}
+
+.threetopic2 {
+    height: 10%;
+    width: 100%;
+    line-height: 57px;
+    /*background-color:red;*/
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.threeblockminutes2 {
+    height: 35%;
+    width: 100%;
+    /*background-color:black;*/
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.round {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #222;
+    color: #FFF;
+    text-align: center;
+}
+
+    .round.hollow {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        background-color: #FFF;
+        color: #222;
+        text-align: center;
+        -webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+    }
+
+    .round.round-sm {
+        height: 20px;
+        width: 20px;
+        /*line-height: 20px;*/
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        font-size: 0.7em;
+    }
+
+    .round.round-lg {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        font-size: 1.5em;
+    }
+
+.glyphicon {
+    top: -4px;
+}
+
+/*--------------------------------------------------------------------*/
+.head {
+    height: 13%;
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    line-height: 62px;
+}
+
+.topic1 {
+    height: 10%;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    line-height: 48px;
+}
+
+.hi {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.hii {
+    height: 100%;
+    width: 50%;
+    /*background-color:aqua;*/
+    float: left;
+}
+
+.minuts1 {
+    height: 27%;
+    width: 100%;
+    /*background-color:red;*/
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.minutes {
+    height: 70%;
+    width: 100%;
+    /*background-color:blanchedalmond;*/
+}
+
+.but {
+    height: 25%;
+    width: 100%;
+}
+
+.ScheduleNextMeeting {
+    margin-top: 20px;
+    width: auto;
+}
+
+.aad {
+    float: left;
+    font-size: 20px;
+}
+
+.aad2 {
+    float: left;
+    font-size: 20px;
+}
+
+.topic2 {
+    height: 10%;
+    width: 100%;
+    line-height: 48px;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.minutes3 {
+    height: 30%;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+
+#AgendaListGrid {
+    height: 280px !important;
+    /*background-color:red;*/
+}
+
+---------------------------------------------------- .thirdBlock {
+    /*background-color:green;*/
+    min-height: 303px;
+}
+
+.fourthdBlock {
+    /*background-color:green;*/
+    min-height: 318px;
+    border: 1px solid #CCCCCC;
+    padding: 0px;
+}
+
+.fourthdBlockdiv {
+    min-height: 263px;
+    padding-right: 0px;
+    padding-left: 0px;
+    /*border:1px solid #CCCCCC;*/
+}
+
+.mainMeetingForm {
+    min-height: 263px;
+}
+
+.fieldr {
+    width: 90%;
+}
+
+.field {
+    width: 98%;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    .EventBtns {
+        position: fixed !important;
+        right: 53px !important;
+        top: 362px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 220px) {
+    .EventBtns {
+        position: fixed !important;
+        right: 52px !important;
+    }
+}
+
+.btnHeader {
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
+    border-radius: 100%;
+}
+
+.btnTopic {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 100%;
+    line-height: 25px;
+}
+
+.imagemargin {
+    margin-top: -20px;
+}
+
+#image {
+    margin-left: 90%;
+    top: 13px;
+    z-index: 100;
+    opacity: 0.4;
+}
+
+#conductMeetingGrid {
+    height: 100%;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    .EventBtns2 {
+        position: absolute !important;
+        top: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 220px) {
+    .EventBtns2 {
+        position: fixed !important;
+        top: 320px;
+    }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    .EventBtns3 {
+        position: absolute !important;
+        top: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 220px) {
+    .EventBtns3 {
+        position: fixed !important;
+        top: 470px;
+    }
+}
+
+.k-dirty {
+    display: none;
+}
+
+
+
+@media(min-width:320px) and (max-width:990px) {
+    .firstBlock {
+        width: 100% !important;
+    }
+
+    .secondBlock {
+        width: 100% !important;
+    }
+
+    .thirdBlock {
+        width: 100% !important;
+    }
+
+    .modal-dialog {
+        width: 100% !important;
+    }
+
+    .StartUpcomingMeetingNow {
+        margin: 0px !important;
+        margin-left: 20px !important;
+    }
+}
+
+@media(min-width:991px) {
+    .firstBlock {
+        width: 25% !important;
+    }
+
+    .secondBlock {
+        width: 50% !important;
+    }
+
+    .StartUpcomingMeetingNow {
+        margin: 20px !important;
+    }
+
+    .Meetingdatepicker {
+    }
+}
+
+@media(min-width:767px) and (max-width:990px) {
+    .StartUpcomingMeetingNow {
+        margin: 20px !important;
+    }
+}
+
+.modal-dialog {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+
+#inviteMemberModel {
+    z-index: 100001;
+}
+
+.k-multiselect-wrap, .field .k-autocomplete, #txtLocation {
+    min-height: 34px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+}
+
+.k-multiselect.k-header, #txtLocation {
+    border: 1px solid #cccccc !important;
+    min-height: 34px;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    .conduct {
+        height: 500px;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .conduct {
+        min-height: 460px !important;
+        padding: 0px;
+    }
+
+    .secondBlock {
+        min-height: 501px !important;
+    }
+
+    .k-grid tbody button.k-button {
+        min-width: 0px !important;
+    }
+
+    .k-grid tbody .k-button, .k-ie8 .k-grid tbody button.k-button {
+        min-width: 0px !important;
+    }
+}
+
+#myModal {
+    z-index: 100003;
+}
+
+#editmintsbottom {
+    border-bottom: none;
+    /*padding: 30px;*/
+}
+
+.small {
+    height: 50px;
+    width: 40px;
+    float: left;
+}
+.MinutestoeditGrid{
+    border:1px solid #CCCCCC;
+    background-color:#FFFFFF;
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+    #textButton1{
+        margin:5px!important;
+        margin-left:15px!important;
+    }
+    #textButton2{
+        margin:5px!important;
+       
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+    #textButton1{
+        margin:0px!important;
+        margin-left:01px!important;
+    }
+    #textButton2{
+        margin:0px!important;
+        margin-left:0px!important;
+    }
+}
+@media screen and (min-width: 1366px) and (max-width: 1400px){
+    .controlforsmall{
+        margin-top: 2%;
+     margin-left: 3%!important;
+    width: 94%!important;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1365px){
+    .controlforsmall{
+        margin-top: 2%;
+     margin-left: 3%!important;
+    width: 93%!important;
+    }
+}
+@media screen and (min-width: 640px) and (max-width: 766px){
+    .controlforsmall{
+        margin-top: 2%;
+     margin-left: 3%!important;
+    width: 96%!important;
+    }
+}
+
+
+
+
+
+@media(min-width:640px) and (max-width:767px){
+    .fieldr {
+        width:96%!important;
+    }
+}
+@media(min-width:768px) and (max-width:800px){
+.fieldr {
+        width:99%!important;
+    }
+}
+@media(min-width:600px) and (max-width:639px){
+    .fieldr {
+        width:96%!important;
+    }
+}
+@media(min-width:320px)and (max-width:480px){
+.fieldr {
+        width:73%!important;
+    }
+}
+@media(min-width:480px)and (max-width:600px) {
+.fieldr {
+        width:89%!important;
+    }
+}
+
+
+
+
+
+
+
+
+/*@media(min-width:1366px)and (max-width:1500px) {
+#conicoondiv{
+        margin-left:30px!important;
+            margin-top: -60px;
+    }
+}
+
+@media(min-width:768px)and (max-width:900px) {
+#conicoondiv{
+        margin-left:50px!important;
+            margin-top: -60px;
+    }
+}
+@media(min-width:901px)and (max-width:1020px) {
+#conicoondiv{
+        margin-left:120px!important;
+            margin-top: -60px;
+    }
+}
+@media(min-width:640px)and (max-width:767px) {
+#conicoondiv{
+        margin-left:25px!important;
+            margin-top: -60px;
+    }
+}
+@media(min-width:480px)and (max-width:639px) {
+#conicoondiv{
+        margin-left:-10px!important;
+            margin-top: -60px;
+    }
+}*/
+@media(min-width:320px)and (max-width:479px) {
+    /*#conicoondiv{
+        margin-left:-14px!important;
+            margin-top: -60px;
+    }*/
+    .round.round-sm {
+        height: 15px !important;
+        width: 15px !important;
+        border-radius: 100% !important;
+    }
+
+    .glyphicon {
+        top: -6px !important;
+    }
+}
+/*@media(min-width:1021px)and (max-width:1200px) {
+#conicoondiv{
+        margin-left:0px!important;
+            margin-top: -60px;
+    }
+}*/
+
+
+
+
+
+
+
+/*@media(min-width:1366px)and (max-width:1500px) {
+    #conicoondiv1 {
+        margin-left: 100px !important;
+    }
+}
+
+@media(min-width:768px)and (max-width:900px) {
+    #conicoondiv1 {
+        margin-left: 130px !important;
+    }
+}
+
+@media(min-width:901px)and (max-width:1020px) {
+    #conicoondiv1 {
+        margin-left: 120px !important;
+    }
+}
+
+@media(min-width:640px)and (max-width:767px) {
+    #conicoondiv1 {
+        margin-left: 80px !important;
+    }
+}
+
+@media(min-width:480px)and (max-width:639px) {
+    #conicoondiv1 {
+        margin-left: 7px !important;
+    }
+}
+
+@media(min-width:320px)and (max-width:479px) {
+    #conicoondiv1 {
+        margin-left: -15px !important;
+    }
+
+    #conicoon1 {
+        margin-left: 5px !important;
+    }
+}
+
+@media(min-width:1021px)and (max-width:1200px) {
+    #conicoondiv1 {
+        margin-left: 25px !important;
+    }
+}*/
+
+
+
+
+.firstBlock #InvitiesGrid a {
+    color: #404040 !important;
+}
+
+.firstBlock #CcsGrid a {
+    color: #404040 !important;
+}
+
+
+.k-grid td.k-state-selected .k-grid tr .k-state-selected > td {
+    border-bottom-color: #FFFFFF !important;
+}
+
+/*.firstBlock #InvitiesGrid .k-grid tr .k-state-selected td{
+    border:0px!important;
+}*/
+
+
+
+
+.k-grid tr.k-state-selected > td {
+    border-bottom-color: #FFFFFF !important;
+}
+/*.k-grid tr td:hover{
+     background-color:#FFFFFF!important;
+ }*/
+
+#image1 {
+    cursor: pointer;
+}
+
+#image2 {
+    cursor: pointer;
+}
+
+#conducthover tr td:hover {
+    background-color: #FFFFFF !important;
+}
+
+.k-state-selected:hover {
+    background-color: #FFFFFF !important;
+}
+
+#ScheduleNextMeeting {
+    margin-left: 0;
+}
+
+
+
+
+
+/*
+@media(min-width:1366px)and (max-width:1500px) {
+    #ScheduleNextMeeting {
+        margin-left: 315px;
+    }
+}
+
+@media(min-width:768px)and (max-width:900px) {
+    #ScheduleNextMeeting {
+        margin-left: 0px;
+    }
+}
+
+@media(min-width:901px)and (max-width:1020px) {
+    #ScheduleNextMeeting {
+        margin-left: 300px;
+    }
+}
+
+@media(min-width:640px)and (max-width:767px) {
+    #ScheduleNextMeeting {
+        margin-left: 0px;
+    }
+}
+
+@media(min-width:480px)and (max-width:639px) {
+    #ScheduleNextMeeting {
+        margin-left: 0px;
+    }
+}
+
+@media(min-width:320px)and (max-width:479px) {
+    #ScheduleNextMeeting {
+        margin-left: 0px;
+    }
+}
+
+@media(min-width:1021px)and (max-width:1200px) {
+    #ScheduleNextMeeting {
+        margin-left: 220px;
+    }
+}*/
+
+.MinutestoeditGrid {
+    min-height: 200px;
+}
+
+#minutes {
+    min-height: 200px;
+    width: 100%;
+}
+
+.MinutestoeditGrid {
+    min-height: 200px;
+}
+
+#minutes {
+    min-height: 200px;
+    width: 100%;
+}
+
+#displayminutes {
+    min-height: 100px !important;
+    width: 359px !important;
+    /*border:1px solid #CCCCCC;*/
+}
+
+/*@media(min-width:1366px)and (max-width:1500px) {
+    #displayminutes {
+        width: 449px !important;
+    }
+}
+
+@media(min-width:768px)and (max-width:900px) {
+    #displayminutes {
+        width: 508px !important;
+    }
+}
+
+@media(min-width:901px)and (max-width:1020px) {
+    #displayminutes {
+        width: 453px !important;
+    }
+}
+
+@media(min-width:640px)and (max-width:767px) {
+    #displayminutes {
+        width: 408px !important;
+    }
+}
+
+@media(min-width:480px)and (max-width:639px) {
+    #displayminutes {
+        width: 284px !important;
+    }
+}
+
+@media(min-width:320px)and (max-width:479px) {
+    #displayminutes {
+        width: 172px !important;
+    }
+}
+
+@media(min-width:1021px)and (max-width:1200px) {
+    #displayminutes {
+        width: 319px !important;
+    }
+}*/
+/*.cell1{
+    padding-left:0px !important;
+}*/
+
+/*Added by mani on 01 03 2017*/
+.conducthover td {
+    padding-left: 0 !important;
+    padding-right: 0;
+}
+
+.minutstoedit {
+    padding: 5px;
+}
+
+#displayminutes {
+    margin:auto;
+    width: 90% !important;
+}
+#conicoondiv1{
+    text-align: right;
+    width: 100%;
+}
+
+/*Added by mani on 02 03 2017*/
+#Grids{
+    /*padding-top:58px !important;*/
+}
+
+#conducthover:hover
+{
+    background-color:#fff !important;
+}
+.conductMeetingGrid-header th{
+    padding:13px !important;
+    border-bottom: 1px solid #e7e7e7;
+}
+ .conductMeetingGrid-footer td{
+     padding:10px !important;
+ }
+.conductMeetingGrid-header:hover, .conductMeetingGrid-footer:hover{
+    background-color:#fff !important;
+}
+#displayminutes:hover{
+    cursor:pointer;
+}
+
+.action{
+    border: 1px solid #ddd;
+    height: 26px;
+    width:150px !important;
+    float:right;
+}
+#modalforconduct {
+padding-left:0px!important;
+padding-right:0px!important;
+
+}
+ .modal-open {
+   margin-right: 0px!important;
+}
+    #meetinact {
+    clear: both;
+    min-height: 18.5px;
+    margin: 10px auto;
+    overflow-y:hidden;
+}
+@media(min-width:1285px)and (max-width:1366px) {
+   #MeetingForm {
+        overflow-y: hidden;
+    }
+}
+body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+    margin-right: 0px!important;
+}
+    .disabledform {
+        resize: none;
+        border: none !important;
+        background: none;
+        background-color: white !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: auto !important;
+        border-top: none;
+        box-shadow: none;
+        white-space: normal;
+    }
+    
+    .small .popover{
+        
+        z-index:100005;
+    }
+   /*#usertr{
+          transition-property: height;
+    transition-duration: 2s;
+    transition-delay: 2s;
+   }*/
+    .k-grid tr.k-state-selected>td{
+     border-bottom-color:#FFFFFF!important;
+ }
+ .k-grid tr.k-state-selected>td:hover{
+     background-color:#FFFFFF!important;
+ }
+  .secondBlock .conduct #conductMeetingGrid #conductMeetingGridTemplate .k-gantt .k-treelist .k-alt.k-state-selected:hover,.k-gantt .k-treelist .k-alt.k-state-selected:hover td{
+    background-color:#FFFFFF!important;
+}
+.secondBlock .conduct #conductMeetingGrid #conductMeetingGridTemplate .k-grid td.k-state-selected:hover,.k-grid tr.k-state-selected:hover td{
+     background-color:#FFFFFF!important;
+}
+.secondBlock .conduct #conductMeetingGrid #conductMeetingGridTemplate .k-grid td.k-state-selected:hover,.k-grid tr.k-state-selected:hover td{
+     background-color:#FFFFFF!important;
+}
+.camerassection {
+        position: fixed;
+        z-index: 100009;
+        width: 400px;
+        min-height: 400px;
+        overflow: visible;
+        border: 2px solid #ddd;
+        top: 0px;
+        background-color: white;
+        right: 0px;
+        visibility: hidden;
+    }
+    
+    .defectheader {
+        height: 60px;
+        line-height: 35px;
+        clear: both;
+        display: block;
+        background-color: #e7e7e7;
+    }
+    .modal-footer {
+    border-top: 0px;
+    background:#e7e7e7;
+    border-bottom:1px solid #818181;
+
+    }
+.modal-body {
+      background:#e7e7e7;
+}
+.html5camControl {
+     background:#c3c3c3;
+}
+
+

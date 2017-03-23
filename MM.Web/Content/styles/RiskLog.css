@@ -1,0 +1,498 @@
+﻿  textarea{
+         width:100%;
+     }
+     .division{
+        clear: both;
+    min-height: 35px;
+    width: 100%;
+    
+     }
+     .riskhr{
+         display:block;
+        
+         border:1px solid #cec9c9;
+     }
+     .treatment{
+         float:left;
+         width:20%;
+         height:30px;
+            line-height:30px;
+     }
+
+     #PT_edit,.RiskBtn{
+         cursor:pointer;
+     }
+     .statusTodone,.statusToOpen{
+         font-size:6px;
+         margin-top:-28px;
+         display:block;
+     }
+     .upperOpenStatus,.upperDoneStatus{
+       margin-top: -8px;
+          display:block;
+     }
+
+
+     .treatmentLine{
+         float:left;
+         width:80%;
+          height:30px;
+          line-height:30px;
+     }
+     .CategoryField{
+        float: left;
+    width: 50%;
+    min-width: 164px;
+    overflow: hidden;
+    min-height:70px;
+     }
+     .Probability {
+            float: right;
+    width: 50%;
+    min-width: 164px;
+    overflow: hidden;
+       min-height:70px;
+     }
+
+   
+     .MainRiskForm .lblspan{
+         color:#a09e9e;
+          font-size:11px;
+     }
+     .k-state-disabled {
+    opacity: 1!important; 
+    display:block;
+}
+     .riskdescriptiontxt {
+         padding-left:8px;
+     }
+     #txtriskControl{
+         margin-left:1px;
+         border: 2px solid #cccccc;
+     }
+     .riskform{
+         border-radius:0px!important;
+     }
+     .cleardivision{
+     height:70px;
+      overflow: hidden;
+     }
+     .riskanalysisfields{ 
+            float:left;
+         width:50%;
+         
+           
+
+     }
+     
+     .RiskCritical {
+    float: right;
+    width: 50%;
+       
+    
+}
+     .riskanalysisfields input[type=text],select{
+         width:30px;
+         margin-left:10px;
+     }
+     .riskanafields{
+            clear: both;
+    height: 30px;
+ 
+  
+     }
+     .riskanalbl{
+         width:60%;
+         float:left;
+         font-size:11px;
+           color:#a09e9e;
+           height: 30px;
+    line-height: 20px;
+             
+     }
+     .riskanafield{
+         width:40%;
+         float:left;
+     }
+     .riskanafield{
+         width:30px;
+     }
+     .RiskCritical{
+         min-height:60px;
+     }
+     
+     .criticalval{
+         float:right;
+         min-height:57px;
+       
+         width:90%;
+         border:2px solid #ddd;
+         text-align:center;
+     }
+     .treatementtxt{
+         min-height:100px;
+         max-height:100px;
+         min-width:98%;
+         max-width:98%;
+         border:2px solid #cccccc;
+         resize: none;
+        padding-left: 12px;
+     }
+     .ownerfiled span{
+         width:100%;
+     }
+     .OwnerofRisk{
+         clear:both;
+         
+         min-height:35px;
+     }
+     .ownerfiled input[type=text]{
+         width:100%;
+     }
+     .riskownfields{
+         clear:both;
+     }
+     .ownerlbl{
+         float:left;
+         width:34%;
+         
+     }
+     .ownerfiled{
+          float:left;
+         width:66%;
+          
+     }
+     .riskdescriptiontxt{
+          min-height:50px;
+         max-height:50px;
+         min-width:100%;
+         max-width:100%;
+           border:2px solid #cccccc;
+         resize: none;
+     }
+     .TopFieldForm{
+         /*margin-top:-10px;*/
+     }
+     .RiskCategoryDiv  {
+         clear:both;
+         margin-top: 10px;
+         height:80px;
+          overflow: hidden;
+     }
+     .RiskControlDiv  {
+         clear:both;
+         height:70px;
+          overflow: hidden;
+     }
+
+@media screen and (max-width: 411px) and (min-width: 360px) {
+    .RiskBtn{
+     float: right;
+    height: 45px;
+    width: 108px;
+    background-color: white;
+    text-align: center;
+    line-height: 45px;
+        border: 2px solid #ddd;
+        margin-top:-5px;
+     }
+}
+@media screen and (max-width: 768px) and (min-width: 411px) {
+    .RiskBtn{
+     float: right;
+    height: 45px;
+    width: 123px;
+    background-color: white;
+    text-align: center;
+    line-height: 45px;
+        border: 2px solid #ddd;
+        margin-top:-5px;
+     }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    .RiskBtn{
+     float: right;
+    height: 45px;
+    width: 118px;
+    background-color: white;
+    text-align: center;
+    line-height: 45px;
+        border: 2px solid #ddd;
+        margin-top:-5px;
+     }
+}
+    
+     .criticalval .statusrisk{
+         display:block;
+       margin-top: 12px;
+
+     }
+     .BottomFieldForm{
+        clear: both;
+    margin: 10px auto;
+    min-height: 70px;
+    overflow: hidden;
+     }
+     .disabledform{
+      resize: none;
+    border: none!important;
+    background: none;
+    background-color: #e7e7e7!important;
+     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor:auto!important;
+    border-top:none;
+    box-shadow:none;
+     }
+#PT_slide_content {
+    width: 100%;
+     
+    margin: 0px auto!important;
+     background-color: #e7e7e7; 
+    min-height: 80%;
+}
+#PT_slide_Layout{
+    top:113px!important;
+    border:2px solid #bbb9b9;
+}
+.statusrisk{
+    font-size:11px;
+}
+     .Impact,.Probabilitydata,.Riskanaimpact,.Riskanaprobability{
+         text-align:center;
+             height: 30px;
+    line-height: 30px;
+     }
+    
+     .drpdisble{
+             -webkit-appearance: none;
+             -moz-appearance: none;
+             padding-left: 10px;
+            
+     }
+     .riskanalysisfields input[type=text],select option{
+         text-align:center;
+     }
+     
+    
+     .k-state-disabled {
+    background-color: #e7e7e7!important;
+    border:none!important;
+}
+     .drpBorder{
+         border:1px solid #ddd;
+          
+     }
+     #BtnSave{
+         display:none;
+     }
+     #BtnOpen{
+         display:none;
+     }
+     .k-dropdown{
+         width:98%;
+     }
+     .riskActionEvent{
+         float:right;
+         clear:both;
+         margin: 10px auto;
+     }
+    
+     #PT_Chat_Pannel{
+         background-color: #e7e7e7!important;
+     }
+     .panel-footer{
+           background-color: #e7e7e7!important;
+           padding: 5px 15px;
+           border-top:none;
+           margin-top:10px;
+           border-bottom:none;
+     }
+
+
+ #PT_layoutSctionA{
+     width:97%!important;
+     margin:auto;
+ }
+
+  #PT_edit{
+display:none;
+float: left;
+   
+    height: 25px;
+    line-height: 25px;
+    width:7%;
+     }
+
+   .mainActivity{
+            width:95%;
+            clear:both;
+            min-height:100px;
+            border:1px solid #c7c6c6;
+            margin:10px auto;
+            border-radius:3px;
+            background-color: white;
+        }
+        .usernameleft{
+            float:left;
+            width:20%;
+            height:45px;
+        }
+        .usernameleft .userimg{
+            width:45px;
+            height:45px;
+            line-height:45px;
+            border-radius:100%;
+            background-color:#0094ff;
+            color:white;
+            display:block;
+           margin:20px auto;
+           text-align:center;
+           text-transform:uppercase;
+        }
+        .activitycontent{
+            float:left;
+            width:78%;
+          min-height:45px;
+           
+        }
+        .activitycontent .activitytitle{
+            padding-left:5px;
+            font-size:13px;
+            display:block;
+           
+             margin-top:18px;
+            text-align:left;
+        }
+        .activityDate{
+              display:block;
+            height:20px;
+            line-height:20px;
+            padding-left:10px;
+            font-size:13px;
+        }
+        .activityfileName{
+              display:block;
+            height:20px;
+            line-height:20px;
+            padding-left:18px;
+            font-size:13px;
+            margin-top:-7px;
+            
+        }
+        .activityheader{
+            clear:both;
+            height:45px;
+            width:100%;
+
+        }
+        .activitybodycontent{
+             clear:both;
+            min-height:65px;
+            width:100%;
+           padding-left:21%;
+        }
+        .activities{
+             overflow-y:auto;
+                overflow-x:hidden;
+        }
+
+         #PT_layoutSctionB{
+            display:none;
+             
+        }
+         #PT_layoutSctionC{
+            display:none;
+            
+        }
+
+
+         #PT_layoutSctionB{
+            
+             overflow-y:scroll;
+         }
+         .dateformat{
+             opacity:0.7;
+         }
+
+
+        .MainRiskForm .k-select{
+            display:none!important;
+        }
+
+        .error-class{
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 120, 102, 0.55);
+
+        }
+
+        .oldVal{
+           
+            text-decoration:line-through;
+            
+        }
+        .riskCalc{
+            display:block;
+             opacity:0.5;
+               padding-left:15px;
+               font-size:12px;
+        }
+        .NewVal{
+              
+        }
+        .mainActivity ul{
+            margin-left:-25px;
+            clear:both;
+            display:block;
+            min-height:15px;
+             
+            margin-bottom:1px;
+        }
+        .mainActivity ul li{
+           
+            clear:both;
+         
+            height:20px;
+            line-height:20px;
+        }
+        .activitybodycontentS{
+            min-height:15px;
+           /*padding-left: 65px;*/
+           padding-left: 80px;
+        }
+        .activitybodycontentS .val{
+            padding-left:15px;
+            opacity:0.5;
+            display:block;
+            font-size:12px;
+        }
+@media screen and (max-width: 775px) and (min-width: 120px) {
+     
+
+}
+@media screen and (max-width: 1366px) and (min-width: 769px) {
+    
+}
+ .Subjetcrisk{
+          margin-top: 15px;
+    min-height: 25px;
+    display: block;
+   padding-left:75px;
+          
+          
+      } 
+      
+        .fileicons{
+         color: grey;
+      }
+        .subjecttext{
+           font-size: 16px;
+    font-weight: 500;
+    padding-left:5px;
+        }
+        .activitybodycontentS:last-child{
+            margin-bottom:20px;
+        }

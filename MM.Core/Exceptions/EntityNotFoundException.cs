@@ -1,0 +1,16 @@
+﻿using System;
+
+namespace MM.Core.Exceptions
+{
+	public class EntityNotFoundException<T> :
+		Exception where T : class
+	{
+		public EntityNotFoundException(long id) :
+			base($"{typeof(T)} not found with {id}.")
+		{ }
+
+		public EntityNotFoundException(string name) :
+			base($"{typeof(T)} not found with {name}.")
+		{ }
+	}
+}
